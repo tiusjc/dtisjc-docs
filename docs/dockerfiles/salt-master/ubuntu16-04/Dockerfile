@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 
 MAINTAINER DTI_SJC <tiusjc@gmail.com>
 
-RUN apt-get update -q && apt-get install -q -y wget python-software-properties software-properties-common
+RUN apt-get update -q && apt-get install -q -y net-tools wget python-software-properties software-properties-common
 
 RUN wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
 
