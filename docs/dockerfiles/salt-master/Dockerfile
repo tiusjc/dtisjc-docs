@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-MAINTAINER DTI_SJC <tiusjc@gmail.com>
+MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
 RUN apt-get update -q && apt-get install -q -y nano net-tools wget python-software-properties software-properties-common
 
