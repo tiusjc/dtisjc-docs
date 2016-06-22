@@ -2,7 +2,7 @@ Dockerfile: salt-master
 -----------------------
 Imagem    : ubuntu xenial
 -------------------------
-Objetivo  : Cria uma imagem com Ununtu xenial e instala o salt-master
+Objetivo  : Cria uma imagem com Ubuntu xenial e instala o salt-master
 ---------------------------------------------------------------------
 Autor     : tiusjc@gmail.com
 ----------------------------
