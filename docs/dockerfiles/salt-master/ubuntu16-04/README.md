@@ -4,11 +4,11 @@
 ##### Maintainer     : tiusjc@gmail.com
 ##### Build:
 ```Bash 
-###### $ docker build -t tiusjc/salt-master:16.04 .
+$ docker build -t tiusjc/salt-master:16.04 .
 ```
 ##### Executar:
 ```Bash 
-###### $ docker run -d -h salt-master --name salt-master tiusjc/salt-master:16.04
+$ docker run -d -h salt-master --name salt-master tiusjc/salt-master:16.04
 ```               
 
 
