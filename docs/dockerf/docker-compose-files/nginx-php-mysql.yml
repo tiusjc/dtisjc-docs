@@ -1,0 +1,60 @@
+
+.. code-block:: docker
+
+  nginx:
+    image: tiusjc/nginx
+    ports:
+      - 8000:80
+    links:
+      - php
+    volumes_from:
+      - app
+
+.. code-block:: docker
+
+  php:
+    image: tiusjc/php7.0.7-fpm
+    ports:
+      - 9000:9000
+    links:
+      - mysql
+    volumes_from:
+      - app
+
+.. code-block:: docker
+
+  app:
+    image: tiusjc/php7.0.7-fpm
+    volumes:
+      - /data/html/:/var/www/html
+    command: echo "Backup aplicação"
+
+.. code-block:: docker
+
+  mysql:
+    image: tiusjc/mysql
+    volumes_from:
+      - data
+    environment:
+      MYSQL_ROOT_PASSWORD: ****
+
+.. code-block:: docker
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    links:
+      - mysql
+    environment:
+      PMA_USER: root
+      PMA_PASSWORD: ****
+      PMA_HOST: mysql
+
+.. code-block:: docker
+
+  data:
+    image: tiusjc/mysql
+    volumes:
+      - /data/mysql/:/var/lib/mysql
+    command: echo "Backup Mysql"
