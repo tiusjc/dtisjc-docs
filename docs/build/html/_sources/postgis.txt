@@ -1,0 +1,41 @@
+=====================================
+Docker - Instalação e Configuração
+=====================================
+
+# Instalação
+
+# Configuração
+
+-------
+Postgis
+-------
+
+1.DOCKERFILE
+
+.. code-block:: bash
+  
+  FROM debian:latest
+
+  MAINTAINER Francismar Nascimento da Silva <francislibra@gmail.com>
+
+  EXPOSE 3306
+
+  CMD ["mysqld"]
+
+2.DOCKER BUILD
+
+.. code-block:: bash
+
+  $ docker build -t mysql-server .
+
+3.DOCKER RUN
+
+.. code-block:: bash
+
+  $ docker run --name mysql-server -h mysql-server -e MYSQL_ROOT_PASSWORD=******* -d mysql-server
+
+4.DOCKER EXEC
+
+.. code-block:: bash
+
+  $ docker exec -ti mysql-server /bin/bash

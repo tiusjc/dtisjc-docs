@@ -1,0 +1,9 @@
+:orphan:
+
+FROM mysql
+
+MAINTAINER Francismar Nascimento da Silva <francislibra@gmail.com>
+
+EXPOSE 3306
+
+
