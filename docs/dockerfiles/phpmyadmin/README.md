@@ -4,7 +4,7 @@
 
   $ docker build -t tiusjc/phpmyadmin .
 
-####3.DOCKER RUN 
+3.DOCKER RUN 
 
 .. code-block:: bash
 
