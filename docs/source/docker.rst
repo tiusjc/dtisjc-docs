@@ -94,3 +94,22 @@ Juntando tudo
 .. include:: ../dockerfiles/docker-compose-files/nginx-php-mysql.yml
 
 .. include:: ../dockerfiles/docker-compose-files/README.md
+
+SALT MASTER
+^^^^^^^^^^^
+
+1. DOCKERFILE
+
+.. include:: ../dockerfiles/salt-master/Dockerfile
+
+.. include:: ../dockerfiles/salt-master/README.md
+
+
+SALT MINION
+^^^^^^^^^^^
+
+1. DOCKERFILE
+
+.. include:: ../dockerfiles/salt-minion/Dockerfile
+
+.. include:: ../dockerfiles/salt-minion/README.md

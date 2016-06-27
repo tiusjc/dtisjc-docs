@@ -1,16 +1,18 @@
-FROM ubuntu:xenial
+.. code-block:: docker
 
-MAINTAINER DTI-SJC <tiusjc@gmail.com>
+  FROM ubuntu:xenial
 
-RUN apt-get update -q && apt-get install -q -y nano wget python-software-properties software-properties-common
+  MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
-RUN wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
+  RUN apt-get update -q && apt-get install -q -y nano wget python-software-properties software-properties-common
 
-RUN echo deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main > /etc/apt/sources.list.d/saltstack.list
+  RUN wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
 
-RUN apt-get update && apt-get install -q -y salt-minion
+  RUN echo deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main > /etc/apt/sources.list.d/saltstack.list
 
-RUN export TERM=xterm
+  RUN apt-get update && apt-get install -q -y salt-minion
 
-CMD ["/usr/bin/salt-minion"]
+  RUN export TERM=xterm
+
+  CMD ["/usr/bin/salt-minion"]
 

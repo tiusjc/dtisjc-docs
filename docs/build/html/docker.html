@@ -92,7 +92,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#phpmyadmin-http-salt-8080">PHPMYADMIN ( http://salt:8080 )</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#juntando-tudo">Juntando tudo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#juntando-tudo">Juntando tudo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#salt-master">SALT MASTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#salt-minion">SALT MINION</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="saltstack.html">SaltStack</a></li>
@@ -477,6 +481,84 @@ mysql&gt;
 </ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker-compose -f nginx-php-mysql.yml -d
 </pre></div>
+</div>
+<div class="section" id="salt-master">
+<h3>SALT MASTER<a class="headerlink" href="#salt-master" title="Link permanente para este título">¶</a></h3>
+<ol class="arabic simple">
+<li>DOCKERFILE</li>
+</ol>
+<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> ubuntu:xenial</span>
+
+<span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
+
+<span class="k">RUN</span> apt-get update -q <span class="o">&amp;&amp;</span> apt-get install -q -y nano net-tools wget python-software-properties software-properties-common
+
+<span class="k">RUN</span> wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub <span class="p">|</span> apt-key add -
+
+<span class="k">RUN</span> <span class="nb">echo</span> deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main &gt; /etc/apt/sources.list.d/saltstack.list
+
+<span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -q -y salt-master
+
+<span class="k">RUN</span> <span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>xterm
+
+<span class="k">ENTRYPOINT</span><span class="s"> [&quot;/usr/bin/salt-master&quot;]</span>
+
+<span class="k">EXPOSE</span><span class="s"> 4505 4506</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>DOCKER BUILD</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/salt-master:16.04 .
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>DOCKER RUN</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -d -h salt --name salt-master tiusjc/salt-master:16.04
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>DOCKER EXEC</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti salt-master /bin/bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="salt-minion">
+<h3>SALT MINION<a class="headerlink" href="#salt-minion" title="Link permanente para este título">¶</a></h3>
+<ol class="arabic simple">
+<li>DOCKERFILE</li>
+</ol>
+<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> ubuntu:xenial</span>
+
+<span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
+
+<span class="k">RUN</span> apt-get update -q <span class="o">&amp;&amp;</span> apt-get install -q -y nano wget python-software-properties software-properties-common
+
+<span class="k">RUN</span> wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub <span class="p">|</span> apt-key add -
+
+<span class="k">RUN</span> <span class="nb">echo</span> deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main &gt; /etc/apt/sources.list.d/saltstack.list
+
+<span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -q -y salt-minion
+
+<span class="k">RUN</span> <span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>xterm
+
+<span class="k">CMD</span><span class="s"> [&quot;/usr/bin/salt-minion&quot;]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>DOCKER BUILD</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/salt-minion:16.04 .
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>DOCKER RUN:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -d --link salt-master:salt-master -h salt-minion --name salt-minion tiusjc/salt-minion:16.04
+</pre></div>
+</div>
 </div>
 </div>
 </div>
