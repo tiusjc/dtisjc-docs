@@ -3,7 +3,9 @@
 .. code-block:: bash
 
 ```bash
+
   $ docker build -t tiusjc/nginx .
+
 ```
 
 ####3.DOCKER RUN ( LINK COM MYSQL)
