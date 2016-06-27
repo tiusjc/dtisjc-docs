@@ -1,6 +1,6 @@
 @ECHO OFF
 
-./copiar_arquivos.bat
+gerar_dockerfiles.sh 1
 
 REM Command file for Sphinx documentation
 
@@ -279,5 +279,7 @@ if "%1" == "dummy" (
 	echo.Build finished. Dummy builder generates no files.
 	goto end
 )
+
+gerar_dockerfiles 2
 
 :end
