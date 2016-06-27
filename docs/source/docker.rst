@@ -77,7 +77,7 @@ MYSQL ( http://salt:8000/mysql.php )
 .. include:: ../dockerfiles/mysql/README.md
 
 PHPMYADMIN ( http://salt:8080 )
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. DOCKERFILE
 
@@ -86,7 +86,7 @@ PHPMYADMIN ( http://salt:8080 )
 .. include:: ../dockerfiles/phpmyadmin/README.md
 
 Juntando tudo
-+++++++++++++
+^^^^^^^^^^^^^
 
 1. DOCKER COMPOSE
 

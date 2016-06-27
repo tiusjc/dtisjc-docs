@@ -89,10 +89,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#nginx-http-salt-8000">Nginx ( http://salt:8000 )</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#php-http-salt-8000-phpinfo-php">PHP ( http://salt:8000/phpinfo.php )</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mysql-http-salt-8000-mysql-php">MYSQL ( http://salt:8000/mysql.php )</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#phpmyadmin-http-salt-8080">PHPMYADMIN ( http://salt:8080 )</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#juntando-tudo">Juntando tudo</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#phpmyadmin-http-salt-8080">PHPMYADMIN ( http://salt:8080 )</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#juntando-tudo">Juntando tudo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#salt-master">SALT MASTER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#salt-minion">SALT MINION</a></li>
 </ul>
@@ -415,8 +413,9 @@ mysql&gt;
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti phpmyadmin /bin/bash
 </pre></div>
 </div>
+</div>
 <div class="section" id="juntando-tudo">
-<h4>Juntando tudo<a class="headerlink" href="#juntando-tudo" title="Link permanente para este título">¶</a></h4>
+<h3>Juntando tudo<a class="headerlink" href="#juntando-tudo" title="Link permanente para este título">¶</a></h3>
 <ol class="arabic simple">
 <li>DOCKER COMPOSE</li>
 </ol>
@@ -479,7 +478,6 @@ mysql&gt;
 </ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker-compose -f nginx-php-mysql.yml -d
 </pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="salt-master">
