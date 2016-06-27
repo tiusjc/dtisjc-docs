@@ -1,7 +1,7 @@
 
 .. code-block:: docker
 
-  FROM nginx
+  FROM nginxx
 
   MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
