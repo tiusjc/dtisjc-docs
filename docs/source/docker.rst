@@ -58,7 +58,7 @@ Nginx ( http://salt:8000 )
 
 .. include:: ../dockerfiles/nginx/README.md
 
-zPHP ( http://salt:8000/phpinfo.php )
+PHP ( http://salt:8000/phpinfo.php )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.DOCKERFILE
