@@ -54,7 +54,7 @@ Nginx ( http://salt:8000 )
 
 1.DOCKERFILE
  
-.. include:: Dockerfile_NGINX
+.. include:: ../dockerfiles/nginx/Dockerfile
 
 .. include:: ../dockerfiles/nginx/README.md
 
