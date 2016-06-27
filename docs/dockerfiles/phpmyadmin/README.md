@@ -6,7 +6,7 @@
 
 3. DOCKER RUN 
 
-..code-block:: bash
+.. code-block:: bash
 
   $ docker run --name phpmyadmin -h phpmyadmin -e PMA_USER=root -e PMA_PASSWORD=******* -e PMA_HOST=mysql -d tiusjc/phpmyadmin
 
