@@ -1,4 +1,4 @@
-<script crossorigin="anonymous" integrity="sha256-+aQGF+XqcTQtxXEDVUsHo8HtyIcSsE3hoECu1EiRoR0=" src="https://raw.githubusercontent.com/tiusjc/dtisjc-docs/master/docs/dockerfiles/nginx/Dockerfile"></script>
+<script src="http://gist-it.sudarmuthu.com/github/tiusjc/dtisjc-docs/master/docs/dockerfiles/nginx/Dockerfile?footer=0"></script>
 
 ####2.DOCKER BUILD
 
