@@ -29,9 +29,7 @@ Testando:
 
 .. code-block:: bash
 
-```bash
   root@nginx:/# curl http://127.0.0.1/
-```
 
 .. code-block:: html
   :linenos:
