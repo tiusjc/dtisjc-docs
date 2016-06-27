@@ -504,21 +504,15 @@ mysql&gt;
 <span class="k">EXPOSE</span><span class="s"> 4505 4506</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li>DOCKER BUILD</li>
-</ol>
+<p>#####2. DOCKER BUILD</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/salt-master:16.04 .
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li>DOCKER RUN</li>
-</ol>
+<p>#####3. DOCKER RUN</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -d -h salt --name salt-master tiusjc/salt-master:16.04
 </pre></div>
 </div>
-<ol class="arabic simple" start="4">
-<li>DOCKER EXEC</li>
-</ol>
+<p>#####4. DOCKER EXEC</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti salt-master /bin/bash
 </pre></div>
 </div>
