@@ -1,3 +1,5 @@
+<script src="http://gist-it.appspot.com/http://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/nginx/Dockerfile"></script>
+
 ####2.DOCKER BUILD
 
 .. code-block:: bash
