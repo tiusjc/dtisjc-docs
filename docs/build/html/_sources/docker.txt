@@ -63,25 +63,9 @@ PHP ( http://salt:8000/phpinfo.php )
 
 1.DOCKERFILE
 
-.. include:: Dockerfile_PHP
+.. include:: ../dockerfiles/php/Dockerfile
 
-2.DOCKER BUILD
-
-.. code-block:: bash
-  
-  $ docker build -t tiusjc/php .
-
-3. DOCKER RUN (link com MYSQL)
-
-.. code-block:: bash
-
-  $ docker run -h php --name php --link mysql:mysql --volumes_from:nginx -d tiusjc/php 
-
-4.DOCKER EXEC
-
-.. code-block:: bash
-
-  $ docker exec -ti php /bin/bash
+.. include:: ../dockerfiles/php/README.md
 
 MYSQL ( http://salt:8000/mysql.php )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

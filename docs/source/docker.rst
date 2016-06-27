@@ -65,7 +65,9 @@ PHP ( http://salt:8000/phpinfo.php )
 
 .. include:: ../dockerfiles/php/Dockerfile
 
-.. include:: ../dockerfiles/php/README.mdMYSQL ( http://salt:8000/mysql.php )
+.. include:: ../dockerfiles/php/README.md
+
+MYSQL ( http://salt:8000/mysql.php )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.DOCKERFILE
