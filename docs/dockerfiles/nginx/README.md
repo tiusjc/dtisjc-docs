@@ -1,5 +1,3 @@
-<script src="http://gist-it.sudarmuthu.com/http://github.com/robertkrimen/gist-it-example/blob/master/example.js?footer=0"></script>
-
 ####2.DOCKER BUILD
 
 .. code-block:: bash
