@@ -50,7 +50,7 @@ Dockerfiles
 .. image:: https://vincent.composieux.fr/assets/img/blog/containers-schema.jpg
 
 Nginx ( http://salt:8000 )
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. DOCKERFILE
  
@@ -76,7 +76,6 @@ MYSQL ( http://salt:8000/mysql.php )
 
 .. include:: ../dockerfiles/mysql/README.md
 
-
 PHPMYADMIN ( http://salt:8080 )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -87,7 +86,7 @@ PHPMYADMIN ( http://salt:8080 )
 .. include:: ../dockerfiles/phpmyadmin/README.md
 
 Juntando tudo
--------------
++++++++++++++
 
 1. DOCKER COMPOSE
 
