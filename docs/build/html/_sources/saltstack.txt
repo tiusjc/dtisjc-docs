@@ -11,7 +11,7 @@ Salt Bootstrap é um shell script que detecta a plataforma de destino e selecion
 ( `Plataformas suportadas <https://docs.saltstack.com/en/latest/topics/tutorials/salt_bootstrap.html#supported-operating-systems>`_ )
 
 1. Instalando salt-master
-   ~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -20,7 +20,7 @@ Salt Bootstrap é um shell script que detecta a plataforma de destino e selecion
 .. note:: Docker https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-master
 
 2. Instalando salt-minion
-   ~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~ 
  
 .. code-block:: bash
   

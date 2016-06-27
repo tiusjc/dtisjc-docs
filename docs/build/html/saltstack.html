@@ -85,7 +85,11 @@
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Docker - Instalação e Configuração</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">SaltStack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#documentacao-https-docs-saltstack-com-en-latest">Documentação: https://docs.saltstack.com/en/latest/</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#instalacao-com-bootstrap">Instalação com Bootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instalacao-com-bootstrap">Instalação com Bootstrap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#instalando-salt-master">1. Instalando salt-master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instalando-salt-minion">2. Instalando salt-minion</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx_vs_readthedocs.html">Sphinx vs Readthedocs</a></li>
@@ -142,9 +146,8 @@
 <h2>Instalação com <a class="reference external" href="https://repo.saltstack.com/#bootstrap">Bootstrap</a><a class="headerlink" href="#instalacao-com-bootstrap" title="Link permanente para este título">¶</a></h2>
 <p>Salt Bootstrap é um shell script que detecta a plataforma de destino e seleciona o melhor método de instalação
 ( <a class="reference external" href="https://docs.saltstack.com/en/latest/topics/tutorials/salt_bootstrap.html#supported-operating-systems">Plataformas suportadas</a> )</p>
-<ol class="arabic simple">
-<li></li>
-</ol>
+<div class="section" id="instalando-salt-master">
+<h3>1. Instalando salt-master<a class="headerlink" href="#instalando-salt-master" title="Link permanente para este título">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo sh bootstrap_salt.sh -M
 </pre></div>
 </div>
@@ -152,9 +155,9 @@
 <p class="first admonition-title">Nota</p>
 <p class="last">Docker <a class="reference external" href="https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-master">https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-master</a></p>
 </div>
-<ol class="arabic simple" start="2">
-<li></li>
-</ol>
+</div>
+<div class="section" id="instalando-salt-minion">
+<h3>2. Instalando salt-minion<a class="headerlink" href="#instalando-salt-minion" title="Link permanente para este título">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo sh bootstrap_salt.sh -A &lt;servidor-salt&gt;
 
 onde:
@@ -166,6 +169,7 @@ onde:
 <p class="last">Docker <a class="reference external" href="https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-minion">https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-minion</a></p>
 </div>
 <p># Configuração</p>
+</div>
 </div>
 </div>
 
