@@ -202,28 +202,37 @@ $ systemctl start docker
 <div class="section" id="nginx-http-salt-8000">
 <h3>Nginx ( <a class="reference external" href="http://salt:8000">http://salt:8000</a> )<a class="headerlink" href="#nginx-http-salt-8000" title="Link permanente para este título">¶</a></h3>
 <p>1.DOCKERFILE</p>
-<div class="highlight-docker"><div class="highlight"><pre><span></span>
+<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> nginxx</span>
+
+<span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
+
+COPY default.conf /etc/nginx/conf.d/default.conf
+
+COPY index.html /var/www/html/
+
+<span class="k">EXPOSE</span><span class="s"> 80</span>
+
+<span class="k">CMD</span><span class="s"> [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]</span>
+</pre></div>
+</div>
+<p>####2.DOCKER BUILD</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <dl class="docutils">
-<dt><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>docker</dt>
-<dd><p class="first">FROM nginxx</p>
-<p>MAINTAINER DTI-SJC &lt;<a class="reference external" href="mailto:tiusjc&#37;&#52;&#48;gmail&#46;com">tiusjc<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</p>
-<p>COPY default.conf /etc/nginx/conf.d/default.conf</p>
-<p>COPY index.html /var/www/html/</p>
-<p>EXPOSE 80</p>
-<p class="last">CMD [&#8220;nginx&#8221;, &#8220;-g&#8221;, &#8220;daemon off;&#8221;]</p>
-</dd>
+<dt><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>bash</dt>
+<dd>$ docker build -t tiusjc/nginx .</dd>
 </dl>
 <p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
-<p>2.DOCKER BUILD</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/nginx .
+<p>####3.DOCKER RUN ( LINK COM MYSQL)</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>3.DOCKER RUN ( LINK COM MYSQL)</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -h nginx --link php:php -p 8000:80 --name nginx -v /data/nginx/html:/usr/share/nginx/html -d tiusjc/nginx
-</pre></div>
-</div>
+<dl class="docutils">
+<dt><a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a>bash</dt>
+<dd>$ docker run -h nginx &#8211;link php:php -p 8000:80 &#8211;name nginx -v /data/nginx/html:/usr/share/nginx/html -d tiusjc/nginx</dd>
+</dl>
+<p><a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">`</span></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
 <p class="last">VOlUMES:  HOST=/data/nginx/html CONTAINER=/usr/share/nginx/html</p>
@@ -232,65 +241,59 @@ $ systemctl start docker
 index.html
 </pre></div>
 </div>
-<p>4.DOCKER EXEC</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti nginx /bin/bash
+<p>####4.DOCKER EXEC</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<dl class="docutils">
+<dt><a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">`</span></a>bash</dt>
+<dd>$ docker exec -ti nginx /bin/bash</dd>
+</dl>
+<p><a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">`</span></a></p>
 <p>Testando:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>root@nginx:/# curl http://127.0.0.1/
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Welcome to nginx!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-  <span class="nt">body</span> <span class="p">{</span>
-      <span class="nb">width</span><span class="o">:</span> <span class="m">35em</span><span class="p">;</span>
-      <span class="nb">margin</span><span class="o">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
-      <span class="nb">font-family</span><span class="o">:</span> <span class="n">Tahoma</span><span class="o">,</span> <span class="n">Verdana</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to nginx!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>For online documentation and support please refer to
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://nginx.org/&quot;</span><span class="p">&gt;</span>nginx.org<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
-Commercial support is available at
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://nginx.com/&quot;</span><span class="p">&gt;</span>nginx.com<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>Thank you for using nginx.<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<dl class="docutils">
+<dt><a href="#id25"><span class="problematic" id="id26">``</span></a><a href="#id27"><span class="problematic" id="id28">`</span></a>bash</dt>
+<dd><a class="reference external" href="mailto:root&#37;&#52;&#48;nginx">root<span>&#64;</span>nginx</a>:/# curl <a class="reference external" href="http://127.0.0.1/">http://127.0.0.1/</a></dd>
+</dl>
+<p><a href="#id29"><span class="problematic" id="id30">``</span></a><a href="#id31"><span class="problematic" id="id32">`</span></a></p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
 </pre></div>
 </td></tr></table></div>
+<dl class="docutils">
+<dt><a href="#id33"><span class="problematic" id="id34">``</span></a><a href="#id35"><span class="problematic" id="id36">`</span></a>html</dt>
+<dd><p class="first">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>body {</dt>
+<dd>width: 35em;
+margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif;</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;</p>
+<p>&lt;p&gt;For online documentation and support please refer to
+&lt;a href=&#8221;<a class="reference external" href="http://nginx.org/">http://nginx.org/</a>&#8220;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a href=&#8221;<a class="reference external" href="http://nginx.com/">http://nginx.com/</a>&#8220;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;</p>
+<p class="last">&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</p>
+</dd>
+</dl>
+<p><a href="#id37"><span class="problematic" id="id38">``</span></a><a href="#id39"><span class="problematic" id="id40">`</span></a></p>
 </div>
 <div class="section" id="php-http-salt-8000-phpinfo-php">
 <h3>PHP ( <a class="reference external" href="http://salt:8000/phpinfo.php">http://salt:8000/phpinfo.php</a> )<a class="headerlink" href="#php-http-salt-8000-phpinfo-php" title="Link permanente para este título">¶</a></h3>

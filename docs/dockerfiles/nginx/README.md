@@ -1,14 +1,18 @@
-2.DOCKER BUILD
+####2.DOCKER BUILD
 
 .. code-block:: bash
 
+```bash
   $ docker build -t tiusjc/nginx .
+```
 
-3.DOCKER RUN ( LINK COM MYSQL)
+####3.DOCKER RUN ( LINK COM MYSQL)
 
 .. code-block:: bash
  
+```bash
   $ docker run -h nginx --link php:php -p 8000:80 --name nginx -v /data/nginx/html:/usr/share/nginx/html -d tiusjc/nginx 
+```
 
 .. note::
   
@@ -19,21 +23,26 @@
   $ ls /data/nginx/html/
   index.html  
 
-4.DOCKER EXEC
+####4.DOCKER EXEC
 
 .. code-block:: bash
 
+```bash
   $ docker exec -ti nginx /bin/bash
+```
 
 Testando:
 
 .. code-block:: bash
 
+```bash
   root@nginx:/# curl http://127.0.0.1/
+```
 
 .. code-block:: html
   :linenos:
 
+```html
   <!DOCTYPE html>
   <html>
   <head>
@@ -59,5 +68,5 @@ Testando:
   <p><em>Thank you for using nginx.</em></p>
   </body>
   </html>
-
+```
 

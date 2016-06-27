@@ -1,7 +1,6 @@
 
 .. code-block:: docker
 
-```docker
   FROM nginxx
 
   MAINTAINER DTI-SJC <tiusjc@gmail.com>
@@ -13,4 +12,3 @@
   EXPOSE 80
 
   CMD ["nginx", "-g", "daemon off;"]
-```
