@@ -1,11 +1,10 @@
-
-#####2. DOCKER BUILD
+2. DOCKER BUILD
 
 .. code-block:: bash
  
   $ docker build -t tiusjc/salt-minion:16.04 .
 
-#####3. DOCKER RUN:
+3. DOCKER RUN:
 
 .. code-block:: bash
 
