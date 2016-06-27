@@ -309,20 +309,33 @@ Commercial support is available at
 <span class="k">CMD</span><span class="s"> [&quot;php-fpm&quot;]</span>
 </pre></div>
 </div>
-<p>2.DOCKER BUILDx</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/php .
+<p>####2.DOCKER BUILD</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li>DOCKER RUN (link com MYSQL)</li>
-</ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -h php --name php --link mysql:mysql --volumes_from:nginx -d tiusjc/php
+<dl class="docutils">
+<dt><a href="#id41"><span class="problematic" id="id42">``</span></a><a href="#id43"><span class="problematic" id="id44">`</span></a>bash</dt>
+<dd>$ docker build -t tiusjc/php .</dd>
+</dl>
+<p><a href="#id45"><span class="problematic" id="id46">``</span></a><a href="#id47"><span class="problematic" id="id48">`</span></a></p>
+<p>####3. DOCKER RUN (link com MYSQL)</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>4.DOCKER EXEC</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti php /bin/bash
+<dl class="docutils">
+<dt><a href="#id49"><span class="problematic" id="id50">``</span></a><a href="#id51"><span class="problematic" id="id52">`</span></a>bash</dt>
+<dd>$ docker run -h php &#8211;name php &#8211;link mysql:mysql &#8211;volumes_from:nginx -d tiusjc/php</dd>
+</dl>
+<p><a href="#id53"><span class="problematic" id="id54">``</span></a><a href="#id55"><span class="problematic" id="id56">`</span></a></p>
+<p>####4.DOCKER EXEC</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<dl class="docutils">
+<dt><a href="#id57"><span class="problematic" id="id58">``</span></a><a href="#id59"><span class="problematic" id="id60">`</span></a>bash</dt>
+<dd>$ docker exec -ti php /bin/bash</dd>
+</dl>
+<p><a href="#id61"><span class="problematic" id="id62">``</span></a><a href="#id63"><span class="problematic" id="id64">`</span></a></p>
 </div>
 <div class="section" id="mysql-http-salt-8000-mysql-php">
 <h3>MYSQL ( <a class="reference external" href="http://salt:8000/mysql.php">http://salt:8000/mysql.php</a> )<a class="headerlink" href="#mysql-http-salt-8000-mysql-php" title="Link permanente para este título">¶</a></h3>
@@ -334,36 +347,53 @@ Commercial support is available at
 <span class="k">EXPOSE</span><span class="s"> 3306</span>
 </pre></div>
 </div>
-<p>2.DOCKER BUILD</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/mysql .
+<p>####2.DOCKER BUILD</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>3.DOCKER RUN</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run --name mysql -h mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>******* -d tiusjc/mysql
+<dl class="docutils">
+<dt><a href="#id65"><span class="problematic" id="id66">``</span></a><a href="#id67"><span class="problematic" id="id68">`</span></a>bash</dt>
+<dd>$ docker build -t tiusjc/mysql .</dd>
+</dl>
+<p><a href="#id69"><span class="problematic" id="id70">``</span></a><a href="#id71"><span class="problematic" id="id72">`</span></a></p>
+<p>####3.DOCKER RUN</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>4.DOCKER EXEC</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti mysql /bin/bash
+<dl class="docutils">
+<dt><a href="#id73"><span class="problematic" id="id74">``</span></a><a href="#id75"><span class="problematic" id="id76">`</span></a>bash</dt>
+<dd>$ docker run &#8211;name mysql -h mysql -e MYSQL_ROOT_PASSWORD=******* -d tiusjc/mysql</dd>
+</dl>
+<p><a href="#id77"><span class="problematic" id="id78">``</span></a><a href="#id79"><span class="problematic" id="id80">`</span></a></p>
+<p>####4.DOCKER EXEC</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>Testando:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>root@mysql:/# mysql -uroot -p
+<dl class="docutils">
+<dt><a href="#id81"><span class="problematic" id="id82">``</span></a><a href="#id83"><span class="problematic" id="id84">`</span></a>bash</dt>
+<dd>$ docker exec -ti mysql /bin/bash</dd>
+</dl>
+<p><a href="#id85"><span class="problematic" id="id86">``</span></a><a href="#id87"><span class="problematic" id="id88">`</span></a></p>
+<p>#####Testando:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><a href="#id89"><span class="problematic" id="id90">``</span></a><a href="#id91"><span class="problematic" id="id92">`</span></a>bash</dt>
+<dd><p class="first"><a class="reference external" href="mailto:root&#37;&#52;&#48;mysql">root<span>&#64;</span>mysql</a>:/# mysql -uroot -p
 Enter password:
-Welcome to the MySQL monitor.  Commands end with <span class="p">;</span> or <span class="se">\g</span>.
+Welcome to the MySQL monitor.  Commands end with ; or g.
 Your MySQL connection id is 3
-Server version: 5.7.12 MySQL Community Server <span class="o">(</span>GPL<span class="o">)</span>
-
-Copyright <span class="o">(</span>c<span class="o">)</span> 2000, 2016, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
+Server version: 5.7.12 MySQL Community Server (GPL)</p>
+<p>Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.</p>
+<p>Oracle is a registered trademark of Oracle Corporation and/or its
 affiliates. Other names may be trademarks of their respective
-owners.
-
-Type <span class="s1">&#39;help;&#39;</span> or <span class="s1">&#39;\h&#39;</span> <span class="k">for</span> help. Type <span class="s1">&#39;\c&#39;</span> to clear the current input statement.
-
-mysql&gt;
-</pre></div>
-</div>
+owners.</p>
+<p>Type &#8216;help;&#8217; or &#8216;h&#8217; for help. Type &#8216;c&#8217; to clear the current input statement.</p>
+<p class="last">mysql&gt;</p>
+</dd>
+</dl>
+<p><a href="#id93"><span class="problematic" id="id94">``</span></a><a href="#id95"><span class="problematic" id="id96">`</span></a></p>
 </div>
 <div class="section" id="phpmyadmin-http-salt-8080">
 <h3>PHPMYADMIN ( <a class="reference external" href="http://salt:8080">http://salt:8080</a> )<a class="headerlink" href="#phpmyadmin-http-salt-8080" title="Link permanente para este título">¶</a></h3>
@@ -375,18 +405,33 @@ mysql&gt;
 <span class="k">EXPOSE</span><span class="s"> 80</span>
 </pre></div>
 </div>
-<p>2.DOCKER BUILD</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/phpmyadmin .
+<p>####2.DOCKER BUILD</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>3.DOCKER RUN</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run --name phpmyadmin -h phpmyadmin -e <span class="nv">PMA_USER</span><span class="o">=</span>root -e <span class="nv">PMA_PASSWORD</span><span class="o">=</span>******* -e <span class="nv">PMA_HOST</span><span class="o">=</span>mysql -d tiusjc/phpmyadmin
+<dl class="docutils">
+<dt><a href="#id97"><span class="problematic" id="id98">``</span></a><a href="#id99"><span class="problematic" id="id100">`</span></a>bash</dt>
+<dd>$ docker build -t tiusjc/phpmyadmin .</dd>
+</dl>
+<p><a href="#id101"><span class="problematic" id="id102">``</span></a><a href="#id103"><span class="problematic" id="id104">`</span></a></p>
+<p>####3.DOCKER RUN</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>4.DOCKER EXEC</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti phpmyadmin /bin/bash
+<dl class="docutils">
+<dt><a href="#id105"><span class="problematic" id="id106">``</span></a><a href="#id107"><span class="problematic" id="id108">`</span></a>bash</dt>
+<dd>$ docker run &#8211;name phpmyadmin -h phpmyadmin -e PMA_USER=root -e PMA_PASSWORD=******* -e PMA_HOST=mysql -d tiusjc/phpmyadmin</dd>
+</dl>
+<p><a href="#id109"><span class="problematic" id="id110">``</span></a><a href="#id111"><span class="problematic" id="id112">`</span></a></p>
+<p>####4.DOCKER EXEC</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<dl class="docutils">
+<dt><a href="#id113"><span class="problematic" id="id114">``</span></a><a href="#id115"><span class="problematic" id="id116">`</span></a>bash</dt>
+<dd>$ docker exec -ti phpmyadmin /bin/bash</dd>
+</dl>
+<p><a href="#id117"><span class="problematic" id="id118">``</span></a><a href="#id119"><span class="problematic" id="id120">`</span></a></p>
 </div>
 </div>
 <div class="section" id="juntando-tudo">
