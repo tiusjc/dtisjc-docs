@@ -1,4 +1,4 @@
-2.DOCKER BUILDx
+2.DOCKER BUILD
 
 .. code-block:: bash
 
