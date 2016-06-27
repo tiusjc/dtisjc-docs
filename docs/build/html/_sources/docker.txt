@@ -52,7 +52,7 @@ Dockerfiles
 Nginx ( http://salt:8000 )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.DOCKERFILE
+1. DOCKERFILE
  
 .. include:: ../dockerfiles/nginx/Dockerfile
 
@@ -61,7 +61,7 @@ Nginx ( http://salt:8000 )
 PHP ( http://salt:8000/phpinfo.php )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.DOCKERFILE
+1. DOCKERFILE
 
 .. include:: ../dockerfiles/php/Dockerfile
 
@@ -80,7 +80,7 @@ MYSQL ( http://salt:8000/mysql.php )
 PHPMYADMIN ( http://salt:8080 )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.DOCKERFILE
+1. DOCKERFILE
 
 .. include:: ../dockerfiles/phpmyadmin/Dockerfile
 
@@ -89,12 +89,8 @@ PHPMYADMIN ( http://salt:8080 )
 Juntando tudo
 -------------
 
-1.DOCKERCOMPOSE
+1. DOCKER COMPOSE
 
-.. include:: nginx-php-mysql.yml
+.. include:: ../dockerfiles/docker-compose-files/nginx-php-mysql.yml
 
-2.EXECUTANDO
-
-.. code-block:: bash
-
-  $ docker-compose -f nginx-php-mysql.yml -d
+.. include:: ../dockerfiles/docker-compose-files/README.md

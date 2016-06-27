@@ -201,7 +201,9 @@ $ systemctl start docker
 <img alt="https://vincent.composieux.fr/assets/img/blog/containers-schema.jpg" src="https://vincent.composieux.fr/assets/img/blog/containers-schema.jpg" />
 <div class="section" id="nginx-http-salt-8000">
 <h3>Nginx ( <a class="reference external" href="http://salt:8000">http://salt:8000</a> )<a class="headerlink" href="#nginx-http-salt-8000" title="Link permanente para este título">¶</a></h3>
-<p>1.DOCKERFILE</p>
+<ol class="arabic simple">
+<li>DOCKERFILE</li>
+</ol>
 <div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> nginxx</span>
 
 <span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
@@ -299,7 +301,9 @@ Commercial support is available at
 </div>
 <div class="section" id="php-http-salt-8000-phpinfo-php">
 <h3>PHP ( <a class="reference external" href="http://salt:8000/phpinfo.php">http://salt:8000/phpinfo.php</a> )<a class="headerlink" href="#php-http-salt-8000-phpinfo-php" title="Link permanente para este título">¶</a></h3>
-<p>1.DOCKERFILE</p>
+<ol class="arabic simple">
+<li>DOCKERFILE</li>
+</ol>
 <div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> php:7.0.7-fpm</span>
 
 <span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
@@ -369,7 +373,9 @@ mysql&gt;
 </div>
 <div class="section" id="phpmyadmin-http-salt-8080">
 <h3>PHPMYADMIN ( <a class="reference external" href="http://salt:8080">http://salt:8080</a> )<a class="headerlink" href="#phpmyadmin-http-salt-8080" title="Link permanente para este título">¶</a></h3>
-<p>1.DOCKERFILE</p>
+<ol class="arabic simple">
+<li>DOCKERFILE</li>
+</ol>
 <div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> phpmyadmin/phpmyadmin</span>
 
 <span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
@@ -393,7 +399,9 @@ mysql&gt;
 </div>
 <div class="section" id="juntando-tudo">
 <h2>Juntando tudo<a class="headerlink" href="#juntando-tudo" title="Link permanente para este título">¶</a></h2>
-<p>1.DOCKERCOMPOSE</p>
+<ol class="arabic simple">
+<li>DOCKER COMPOSE</li>
+</ol>
 <div class="highlight-docker"><div class="highlight"><pre><span></span>nginx:
   image: tiusjc/nginx
   ports:
@@ -448,7 +456,9 @@ mysql&gt;
   command: <span class="nb">echo</span> <span class="s2">&quot;Backup Mysql&quot;</span>
 </pre></div>
 </div>
-<p>2.EXECUTANDO</p>
+<ol class="arabic simple" start="2">
+<li>EXECUTANDO</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker-compose -f nginx-php-mysql.yml -d
 </pre></div>
 </div>
