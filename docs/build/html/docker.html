@@ -215,11 +215,15 @@ COPY index.html /var/www/html/
 <span class="k">CMD</span><span class="s"> [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]</span>
 </pre></div>
 </div>
-<p>2.DOCKER BUILD</p>
+<ol class="arabic simple" start="2">
+<li>DOCKER BUILD</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/nginx .
 </pre></div>
 </div>
-<p>3.DOCKER RUN ( LINK COM MYSQL)</p>
+<ol class="arabic simple" start="3">
+<li>DOCKER RUN ( LINK COM MYSQL)</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -h nginx --link php:php -p 8000:80 --name nginx -v /data/nginx/html:/usr/share/nginx/html -d tiusjc/nginx
 </pre></div>
 </div>
@@ -231,7 +235,9 @@ COPY index.html /var/www/html/
 index.html
 </pre></div>
 </div>
-<p>4.DOCKER EXEC</p>
+<ol class="arabic simple" start="4">
+<li>DOCKER EXEC</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti nginx /bin/bash
 </pre></div>
 </div>
