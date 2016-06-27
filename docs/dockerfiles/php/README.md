@@ -1,4 +1,4 @@
-2.DOCKER BUILD
+2. DOCKER BUILD
 
 .. code-block:: bash
 
@@ -10,7 +10,7 @@
 
   $ docker run -h php --name php --link mysql:mysql --volumes_from:nginx -d tiusjc/php 
 
-4.DOCKER EXEC
+4. DOCKER EXEC
 
 .. code-block:: bash
 

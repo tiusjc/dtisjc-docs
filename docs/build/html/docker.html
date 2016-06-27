@@ -315,7 +315,9 @@ Commercial support is available at
 <span class="k">CMD</span><span class="s"> [&quot;php-fpm&quot;]</span>
 </pre></div>
 </div>
-<p>2.DOCKER BUILD</p>
+<ol class="arabic simple" start="2">
+<li>DOCKER BUILD</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/php .
 </pre></div>
 </div>
@@ -325,7 +327,9 @@ Commercial support is available at
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -h php --name php --link mysql:mysql --volumes_from:nginx -d tiusjc/php
 </pre></div>
 </div>
-<p>4.DOCKER EXEC</p>
+<ol class="arabic simple" start="4">
+<li>DOCKER EXEC</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti php /bin/bash
 </pre></div>
 </div>
@@ -340,15 +344,21 @@ Commercial support is available at
 <span class="k">EXPOSE</span><span class="s"> 3306</span>
 </pre></div>
 </div>
-<p>2.DOCKER BUILD</p>
+<ol class="arabic simple" start="2">
+<li>DOCKER BUILD</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/mysql .
 </pre></div>
 </div>
-<p>3.DOCKER RUN</p>
+<ol class="arabic simple" start="3">
+<li>DOCKER RUN</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run --name mysql -h mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>******* -d tiusjc/mysql
 </pre></div>
 </div>
-<p>4.DOCKER EXEC</p>
+<ol class="arabic simple" start="4">
+<li>DOCKER EXEC</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti mysql /bin/bash
 </pre></div>
 </div>
@@ -383,15 +393,21 @@ mysql&gt;
 <span class="k">EXPOSE</span><span class="s"> 80</span>
 </pre></div>
 </div>
-<p>2.DOCKER BUILD</p>
+<ol class="arabic simple" start="2">
+<li>DOCKER BUILD</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/phpmyadmin .
 </pre></div>
 </div>
-<p>3.DOCKER RUN</p>
+<ol class="arabic simple" start="3">
+<li>DOCKER RUN</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run --name phpmyadmin -h phpmyadmin -e <span class="nv">PMA_USER</span><span class="o">=</span>root -e <span class="nv">PMA_PASSWORD</span><span class="o">=</span>******* -e <span class="nv">PMA_HOST</span><span class="o">=</span>mysql -d tiusjc/phpmyadmin
 </pre></div>
 </div>
-<p>4.DOCKER EXEC</p>
+<ol class="arabic simple" start="4">
+<li>DOCKER EXEC</li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti phpmyadmin /bin/bash
 </pre></div>
 </div>
