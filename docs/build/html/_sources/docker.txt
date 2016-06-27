@@ -91,6 +91,7 @@ Testando:
 
 .. code-block:: html
   :linenos:
+
   <!DOCTYPE html>
   <html>
   <head>
@@ -116,12 +117,6 @@ Testando:
   <p><em>Thank you for using nginx.</em></p>
   </body>
   </html>
-
-5. SALT
-
-
-
-.. literalinclude:: //home/vol1/salt/base/nginx/init.sls
 
 PHP ( http://salt:8000/phpinfo.php )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
