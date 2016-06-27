@@ -539,15 +539,11 @@ mysql&gt;
 <span class="k">CMD</span><span class="s"> [&quot;/usr/bin/salt-minion&quot;]</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li>DOCKER BUILD</li>
-</ol>
+<p>#####2. DOCKER BUILD</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/salt-minion:16.04 .
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li>DOCKER RUN:</li>
-</ol>
+<p>#####3. DOCKER RUN:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -d --link salt-master:salt-master -h salt-minion --name salt-minion tiusjc/salt-minion:16.04
 </pre></div>
 </div>
