@@ -1,4 +1,4 @@
-<script src="http://gist-it.appspot.com/github/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/nginx/Dockerfile"></script>
+<script src="https://raw.githubusercontent.com/tiusjc/dtisjc-docs/master/docs/dockerfiles/nginx/Dockerfile"></script>
 
 ####2.DOCKER BUILD
 
