@@ -85,25 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Docker - Instalação e Configuração</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">SaltStack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#documentacao-https-docs-saltstack-com-en-latest">Documentação: https://docs.saltstack.com/en/latest/</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#instalacao-com-bootstrap">Instalação com Bootstrap</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#usando-curl">Usando CURL</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#instalando-a-latest-development">Instalando a latest development:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#instalando-especifico-release-version">Instalando específico release version:</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#usando-wget">Usando WGET</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#instalando-a-ultima-stable-version">Instalando a última stable version:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#instalando-uma-versao-especifica">Instalando uma versão específica:</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#exemplo-de-uso">Exemplo de uso</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#instalando-salt-master">Instalando salt-master</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#instalando-salt-minion">Instalando salt-minion</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#opcoes-de-linha-de-comando">Opções de linha de comando</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#instalacao-com-bootstrap">Instalação com Bootstrap</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx_vs_readthedocs.html">Sphinx vs Readthedocs</a></li>
@@ -160,135 +142,30 @@
 <h2>Instalação com <a class="reference external" href="https://repo.saltstack.com/#bootstrap">Bootstrap</a><a class="headerlink" href="#instalacao-com-bootstrap" title="Link permanente para este título">¶</a></h2>
 <p>Salt Bootstrap é um shell script que detecta a plataforma de destino e seleciona o melhor método de instalação
 ( <a class="reference external" href="https://docs.saltstack.com/en/latest/topics/tutorials/salt_bootstrap.html#supported-operating-systems">Plataformas suportadas</a> )</p>
-<div class="section" id="usando-curl">
-<h3>Usando CURL<a class="headerlink" href="#usando-curl" title="Link permanente para este título">¶</a></h3>
-<div class="section" id="instalando-a-latest-development">
-<h4>Instalando a latest development:<a class="headerlink" href="#instalando-a-latest-development" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -o bootstrap_salt.sh -L https://bootstrap.saltstack.com
-$ sudo sh bootstrap_salt.sh git develop
-</pre></div>
-</div>
-</div>
-<div class="section" id="instalando-especifico-release-version">
-<h4>Instalando específico release version:<a class="headerlink" href="#instalando-especifico-release-version" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -o bootstrap_salt.sh -L https://bootstrap.saltstack.com
-$ sudo sh bootstrap_salt.sh git v2015.8.8
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="usando-wget">
-<h3>Usando WGET<a class="headerlink" href="#usando-wget" title="Link permanente para este título">¶</a></h3>
-<div class="section" id="instalando-a-ultima-stable-version">
-<h4>Instalando a última stable version:<a class="headerlink" href="#instalando-a-ultima-stable-version" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ wget -O bootstrap_salt.sh https://bootstrap.saltstack.com
-$ sudo sh bootstrap_salt.sh
-</pre></div>
-</div>
-</div>
-<div class="section" id="instalando-uma-versao-especifica">
-<h4>Instalando uma versão específica:<a class="headerlink" href="#instalando-uma-versao-especifica" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ wget -O bootstrap_salt.sh https://bootstrap.saltstack.com
-$ sudo sh bootstrap_salt.sh -P git v2015.8.8
+<ol class="arabic simple">
+<li></li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo sh bootstrap_salt.sh -M
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
-<p class="last">No exemplo acima foi adicionado a opção -P para que PIP pacotes sejam instalados
-se necessário (não é necessário para GIT instalação).</p>
+<p class="last">Docker <a class="reference external" href="https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-master">https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-master</a></p>
 </div>
-</div>
-</div>
-<div class="section" id="exemplo-de-uso">
-<h3>Exemplo de uso<a class="headerlink" href="#exemplo-de-uso" title="Link permanente para este título">¶</a></h3>
-<div class="section" id="instalando-salt-master">
-<h4>Instalando salt-master<a class="headerlink" href="#instalando-salt-master" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo sh bootstrap_salt.sh -M
-</pre></div>
-</div>
-</div>
-<div class="section" id="instalando-salt-minion">
-<h4>Instalando salt-minion<a class="headerlink" href="#instalando-salt-minion" title="Link permanente para este título">¶</a></h4>
+<ol class="arabic simple" start="2">
+<li></li>
+</ol>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo sh bootstrap_salt.sh -A &lt;servidor-salt&gt;
 
 onde:
    &lt;servidor-salt&gt; - IP ou DNS name <span class="k">do</span> servidor <span class="k">do</span> salt.
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="opcoes-de-linha-de-comando">
-<h3>Opções de linha de comando<a class="headerlink" href="#opcoes-de-linha-de-comando" title="Link permanente para este título">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sh bootstrap-salt.sh -h
-</pre></div>
-</div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>Usage :  bootstrap-salt.sh [options] &lt;install-type&gt; &lt;install-type-args&gt;
-
-Installation types:
-  - stable (default)
-  - stable [version] (ubuntu specific)
-  - daily  (ubuntu specific)
-  - testing (redhat specific)
-  - git
-
-Examples:
-  - bootstrap-salt.sh
-  - bootstrap-salt.sh stable
-  - bootstrap-salt.sh stable 2014.7
-  - bootstrap-salt.sh daily
-  - bootstrap-salt.sh testing
-  - bootstrap-salt.sh git
-  - bootstrap-salt.sh git develop
-  - bootstrap-salt.sh git v0.17.0
-  - bootstrap-salt.sh git 8c3fadf15ec183e5ce8c63739850d543617e4357
-
-Options:
--h  Display this message
--v  Display script version
--n  No colours.
--D  Show debug output.
--c  Temporary configuration directory
--g  Salt repository URL. (default: git://github.com/saltstack/salt.git)
--G  Instead of cloning from git://github.com/saltstack/salt.git, clone from https://github.com/saltstack/salt.git (Usually necessary on systems which have the regular git protocol port blocked, where https usually is not)
--k  Temporary directory holding the minion keys which will pre-seed
-    the master.
--s  Sleep time used when waiting for daemons to start, restart and when checking
-    for the services running. Default: 3
--M  Also install salt-master
--S  Also install salt-syndic
--N  Do not install salt-minion
--X  Do not start daemons after installation
--C  Only run the configuration function. This option automatically
-    bypasses any installation.
--P  Allow pip based installations. On some distributions the required salt
-    packages or its dependencies are not available as a package for that
-    distribution. Using this flag allows the script to use pip as a last
-    resort method. NOTE: This only works for functions which actually
-    implement pip based installations.
--F  Allow copied files to overwrite existing(config, init.d, etc)
--U  If set, fully upgrade the system prior to bootstrapping salt
--K  If set, keep the temporary files in the temporary directories specified
-    with -c and -k.
--I  If set, allow insecure connections while downloading any files. For
-    example, pass &#39;--no-check-certificate&#39; to &#39;wget&#39; or &#39;--insecure&#39; to &#39;curl&#39;
--A  Pass the salt-master DNS name or IP. This will be stored under
-    ${BS_SALT_ETC_DIR}/minion.d/99-master-address.conf
--i  Pass the salt-minion id. This will be stored under
-    ${BS_SALT_ETC_DIR}/minion_id
--L  Install the Apache Libcloud package if possible(required for salt-cloud)
--p  Extra-package to install while installing salt dependencies. One package
-    per -p flag. You&#39;re responsible for providing the proper package name.
--d  Disable check_service functions. Setting this flag disables the
-    &#39;install_&lt;distro&gt;_check_services&#39; checks. You can also do this by
-    touching /tmp/disable_salt_checks on the target host. Defaults ${BS_FALSE}
--H  Use the specified http proxy for the installation
--Z  Enable external software source for newer ZeroMQ(Only available for RHEL/CentOS/Fedora/Ubuntu based distributions)
--b  Assume that dependencies are already installed and software sources are set up.
-    If git is selected, git tree is still checked out as dependency step.
-</pre></div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Docker <a class="reference external" href="https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-minion">https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-minion</a></p>
 </div>
 <p># Configuração</p>
-</div>
 </div>
 </div>
 
