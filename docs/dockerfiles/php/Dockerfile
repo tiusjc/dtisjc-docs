@@ -1,4 +1,3 @@
-
 .. code-block:: docker
 
   FROM php:7.0.7-fpm

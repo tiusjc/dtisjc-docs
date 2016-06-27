@@ -1,4 +1,3 @@
-
 .. code-block:: docker
 
   FROM mysql

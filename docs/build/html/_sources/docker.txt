@@ -59,7 +59,7 @@ Nginx ( http://salt:8000 )
 .. include:: ../dockerfiles/nginx/README.md
 
 PHP ( http://salt:8000/phpinfo.php )
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. DOCKERFILE
 
@@ -68,7 +68,7 @@ PHP ( http://salt:8000/phpinfo.php )
 .. include:: ../dockerfiles/php/README.md
 
 MYSQL ( http://salt:8000/mysql.php )
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.DOCKERFILE
 

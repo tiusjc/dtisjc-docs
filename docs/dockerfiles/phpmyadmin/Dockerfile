@@ -1,4 +1,3 @@
-
 .. code-block:: docker
 
   FROM phpmyadmin/phpmyadmin
