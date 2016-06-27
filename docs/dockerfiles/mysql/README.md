@@ -1,22 +1,22 @@
-2. DOCKER BUILD
+#####2. DOCKER BUILD
 
 .. code-block:: bash
 
   $ docker build -t tiusjc/mysql .
 
-3. DOCKER RUN 
+#####3. DOCKER RUN 
 
 .. code-block:: bash
 
   $ docker run --name mysql -h mysql -e MYSQL_ROOT_PASSWORD=******* -d tiusjc/mysql
 
-4. DOCKER EXEC
+#####4. DOCKER EXEC
 
 .. code-block:: bash
 
   $ docker exec -ti mysql /bin/bash
 
-Testando:
+#####Testando:
 
 .. code-block:: bash
   

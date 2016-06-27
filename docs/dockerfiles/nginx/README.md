@@ -1,10 +1,10 @@
-2. DOCKER BUILD
+#####2. DOCKER BUILD
 
 .. code-block:: bash
 
   $ docker build -t tiusjc/nginx .
 
-3. DOCKER RUN ( LINK COM MYSQL)
+#####3. DOCKER RUN ( LINK COM MYSQL)
 
 .. code-block:: bash
  
@@ -19,13 +19,13 @@
   $ ls /data/nginx/html/
   index.html  
 
-4. DOCKER EXEC
+#####4. DOCKER EXEC
 
 .. code-block:: bash
 
   $ docker exec -ti nginx /bin/bash
 
-Testando:
+#####Testando:
 
 .. code-block:: bash
 
