@@ -22,6 +22,7 @@ Instalação
   $ sudo sh bootstrap_salt.sh -M 
 
 Docker: http://dtisjc-docs.readthedocs.io/en/latest/docker.html#salt-master 
+
 Github: https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-master
 
 2. No salt-minion 
@@ -35,6 +36,7 @@ Github: https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-
      <servidor-salt> - IP ou DNS name do servidor do salt.
 
 Docker: http://dtisjc-docs.readthedocs.io/en/latest/docker.html#salt-minion 
+
 Github: https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-minion
 
 # Configuração
