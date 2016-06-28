@@ -15,7 +15,7 @@ Instalação
 ----------
 
 1. No salt master
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -26,7 +26,7 @@ Docker: http://dtisjc-docs.readthedocs.io/en/latest/docker.html#salt-master
 Github: https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-master
 
 2. No salt-minion 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
  
 .. code-block:: bash
   
@@ -39,4 +39,39 @@ Docker: http://dtisjc-docs.readthedocs.io/en/latest/docker.html#salt-minion
 
 Github: https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-minion
 
-# Configuração
+Configuração
+------------
+
+1. No master
+   
+   /etc/salt/master   
+
+.. code-block:: yaml
+  
+  file_roots:
+    base:
+      - /home/vol1/salt/base
+
+  pillar_roots:: yaml
+    base:
+      - /home/vol1/salt/pillar
+
+2. No minion
+
+   /etc/salt/minion
+
+.. code-block:: yaml
+
+  master: <ip_salt_servidor>
+ 
+3. Reiniciando serviços
+  
+.. code-block:: bash
+
+  $ sudo restart salt-master
+  $ sudo restart salt-minion
+
+
+
+
+

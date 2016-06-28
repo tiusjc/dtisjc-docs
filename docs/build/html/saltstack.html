@@ -91,6 +91,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#no-salt-minion">2. No salt-minion</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#configuracao">Configuração</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx_vs_readthedocs.html">Sphinx vs Readthedocs</a></li>
@@ -168,7 +169,38 @@ onde:
 </div>
 <p>Docker: <a class="reference external" href="http://dtisjc-docs.readthedocs.io/en/latest/docker.html#salt-minion">http://dtisjc-docs.readthedocs.io/en/latest/docker.html#salt-minion</a></p>
 <p>Github: <a class="reference external" href="https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-minion">https://github.com/tiusjc/dtisjc-docs/tree/master/docs/dockerfiles/salt-minion</a></p>
-<p># Configuração</p>
+</div>
+</div>
+<div class="section" id="configuracao">
+<h2>Configuração<a class="headerlink" href="#configuracao" title="Link permanente para este título">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">No master</p>
+<p>/etc/salt/master</p>
+</li>
+</ol>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">file_roots</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">base</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/home/vol1/salt/base</span>
+
+<span class="l l-Scalar l-Scalar-Plain">pillar_roots:</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yaml</span>
+  <span class="l l-Scalar l-Scalar-Plain">base</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/home/vol1/salt/pillar</span>
+</pre></div>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">No minion</p>
+<p>/etc/salt/minion</p>
+</li>
+</ol>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;ip_salt_servidor&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Reiniciando serviços</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo restart salt-master
+$ sudo restart salt-minion
+</pre></div>
 </div>
 </div>
 </div>
