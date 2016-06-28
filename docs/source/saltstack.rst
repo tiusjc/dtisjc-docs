@@ -43,6 +43,7 @@ Configuração
 ------------
 
 1. No master
+~~~~~~~~~~~~
    
    /etc/salt/master   
 
@@ -63,6 +64,7 @@ Reiniciando serviço:
   $ /etc/init.d/salt-minion restart 
 
 2. No minion
+~~~~~~~~~~~~
 
    /etc/salt/minion
 
@@ -76,8 +78,44 @@ Reiniciando serviço:
 
   $ /etc/init.d/salt-minion restart 
  
+Aceitando minions
+-----------------
 
+::
 
+Comando: SALT-KEY -h ( https://docs.saltstack.com/en/latest/ref/cli/salt-key.html )
+         -a - aceita minion key
+         -A - aceitar todas as minions keys
+         -r - rejeita minion key
+         -R - Rejeitar todas as minions keys
+         -d - Deletar minion key
+         -D - Deleta todas as minions keys
+
+.. code-block:: bash
+  
+  $ salt-key
+  Accepted Keys:
+  D159718
+  Denied Keys:
+  Unaccepted Keys:
+  D159718
+  Rejected Keys:
+
+Comandos salt
+-------------
+
+.. code-block:: bash
+
+  Exibe a versão do salt resumo
+  $ salt-master --version 
+  $ salt-minion --version
+
+  Exibe informações completas
+  $ salt-master --versions-report
+  $ salt-minion --versions-report
+
+  
+  
 
 
 

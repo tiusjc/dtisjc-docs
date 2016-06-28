@@ -91,7 +91,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#no-salt-minion">2. No salt-minion</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#configuracao">Configuração</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuracao">Configuração</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#no-master">1. No master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#no-minion">2. No minion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#aceitando-minions">Aceitando minions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comandos-salt">Comandos salt</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx_vs_readthedocs.html">Sphinx vs Readthedocs</a></li>
@@ -173,11 +179,10 @@ onde:
 </div>
 <div class="section" id="configuracao">
 <h2>Configuração<a class="headerlink" href="#configuracao" title="Link permanente para este título">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">No master</p>
-<p>/etc/salt/master</p>
-</li>
-</ol>
+<div class="section" id="no-master">
+<h3>1. No master<a class="headerlink" href="#no-master" title="Link permanente para este título">¶</a></h3>
+<blockquote>
+<div>/etc/salt/master</div></blockquote>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">file_roots</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">base</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/home/vol1/salt/base</span>
@@ -191,16 +196,50 @@ onde:
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ /etc/init.d/salt-minion restart
 </pre></div>
 </div>
-<ol class="arabic" start="2">
-<li><p class="first">No minion</p>
-<p>/etc/salt/minion</p>
-</li>
-</ol>
+</div>
+<div class="section" id="no-minion">
+<h3>2. No minion<a class="headerlink" href="#no-minion" title="Link permanente para este título">¶</a></h3>
+<blockquote>
+<div>/etc/salt/minion</div></blockquote>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;ip_salt_servidor&gt;</span>
 </pre></div>
 </div>
 <p>Reiniciando serviço:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ /etc/init.d/salt-minion restart
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="aceitando-minions">
+<h2>Aceitando minions<a class="headerlink" href="#aceitando-minions" title="Link permanente para este título">¶</a></h2>
+<dl class="docutils">
+<dt>Comando: SALT-KEY -h ( <a class="reference external" href="https://docs.saltstack.com/en/latest/ref/cli/salt-key.html">https://docs.saltstack.com/en/latest/ref/cli/salt-key.html</a> )</dt>
+<dd>-a - aceita minion key
+-A - aceitar todas as minions keys
+-r - rejeita minion key
+-R - Rejeitar todas as minions keys
+-d - Deletar minion key
+-D - Deleta todas as minions keys</dd>
+</dl>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ salt-key
+Accepted Keys:
+D159718
+Denied Keys:
+Unaccepted Keys:
+D159718
+Rejected Keys:
+</pre></div>
+</div>
+</div>
+<div class="section" id="comandos-salt">
+<h2>Comandos salt<a class="headerlink" href="#comandos-salt" title="Link permanente para este título">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>Exibe a versão <span class="k">do</span> salt resumo
+$ salt-master --version
+$ salt-minion --version
+
+Exibe informações completas
+$ salt-master --versions-report
+$ salt-minion --versions-report
 </pre></div>
 </div>
 </div>
