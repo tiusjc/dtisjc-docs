@@ -77,9 +77,12 @@ Reiniciando serviço:
 .. code-block:: bash
 
   $ /etc/init.d/salt-minion restart 
+
+Comandos salt
+-------------
  
 Aceitando minions
------------------
+~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -101,8 +104,8 @@ Aceitando minions
   D159718
   Rejected Keys:
 
-Comandos salt
--------------
+Verificando a versão
+~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
@@ -113,6 +116,14 @@ Comandos salt
   Exibe informações completas
   $ salt-master --versions-report
   $ salt-minion --versions-report
+
+Testando os minions
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+  $ salt \* test.ping
+
 
   
   

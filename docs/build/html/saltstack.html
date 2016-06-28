@@ -96,8 +96,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#no-minion">2. No minion</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#aceitando-minions">Aceitando minions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#comandos-salt">Comandos salt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comandos-salt">Comandos salt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aceitando-minions">Aceitando minions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verificando-a-versao">Verificando a versão</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testando-os-minions">Testando os minions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sphinx_vs_readthedocs.html">Sphinx vs Readthedocs</a></li>
@@ -210,8 +214,10 @@ onde:
 </div>
 </div>
 </div>
+<div class="section" id="comandos-salt">
+<h2>Comandos salt<a class="headerlink" href="#comandos-salt" title="Link permanente para este título">¶</a></h2>
 <div class="section" id="aceitando-minions">
-<h2>Aceitando minions<a class="headerlink" href="#aceitando-minions" title="Link permanente para este título">¶</a></h2>
+<h3>Aceitando minions<a class="headerlink" href="#aceitando-minions" title="Link permanente para este título">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>Comando: SALT-KEY -h <span class="o">(</span> https://docs.saltstack.com/en/latest/ref/cli/salt-key.html <span class="o">)</span>
          -a - aceita minion key
          -A - aceitar todas as minions keys
@@ -231,8 +237,8 @@ Rejected Keys:
 </pre></div>
 </div>
 </div>
-<div class="section" id="comandos-salt">
-<h2>Comandos salt<a class="headerlink" href="#comandos-salt" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="verificando-a-versao">
+<h3>Verificando a versão<a class="headerlink" href="#verificando-a-versao" title="Link permanente para este título">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>Exibe a versão <span class="k">do</span> salt resumo
 $ salt-master --version
 $ salt-minion --version
@@ -241,6 +247,13 @@ Exibe informações completas
 $ salt-master --versions-report
 $ salt-minion --versions-report
 </pre></div>
+</div>
+</div>
+<div class="section" id="testando-os-minions">
+<h3>Testando os minions<a class="headerlink" href="#testando-os-minions" title="Link permanente para este título">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ salt <span class="se">\*</span> test.ping
+</pre></div>
+</div>
 </div>
 </div>
 </div>
