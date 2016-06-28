@@ -83,13 +83,13 @@ Aceitando minions
 
 .. code-block:: bash
 
-Comando: SALT-KEY -h ( https://docs.saltstack.com/en/latest/ref/cli/salt-key.html )
-         -a - aceita minion key
-         -A - aceitar todas as minions keys
-         -r - rejeita minion key
-         -R - Rejeitar todas as minions keys
-         -d - Deletar minion key
-         -D - Deleta todas as minions keys
+  Comando: SALT-KEY -h ( https://docs.saltstack.com/en/latest/ref/cli/salt-key.html )
+           -a - aceita minion key
+           -A - aceitar todas as minions keys
+           -r - rejeita minion key
+           -R - Rejeitar todas as minions keys
+           -d - Deletar minion key
+           -D - Deleta todas as minions keys
 
 .. code-block:: bash
   
