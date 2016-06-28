@@ -56,6 +56,10 @@ Configuração
     base:
       - /home/vol1/salt/pillar
 
+.. code-block:: bash
+
+  $ /etc/init.d/salt-minion restart 
+
 2. No minion
 
    /etc/salt/minion
@@ -63,6 +67,10 @@ Configuração
 .. code-block:: yaml
 
   master: <ip_salt_servidor>
+
+.. code-block:: bash
+
+  $ /etc/init.d/salt-minion restart 
  
 3. Reiniciando serviços
   
