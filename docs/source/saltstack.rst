@@ -81,7 +81,7 @@ Reiniciando serviço:
 Aceitando minions
 -----------------
 
-::
+.. code-block:: bash
 
 Comando: SALT-KEY -h ( https://docs.saltstack.com/en/latest/ref/cli/salt-key.html )
          -a - aceita minion key
