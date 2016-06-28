@@ -52,7 +52,7 @@ Configuração
     base:
       - /home/vol1/salt/base
 
-  pillar_roots:: yaml
+  pillar_roots:
     base:
       - /home/vol1/salt/pillar
 
