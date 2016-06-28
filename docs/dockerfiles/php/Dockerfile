@@ -1,10 +1,11 @@
+.. code-block:: docker
 
-FROM php:7.0.7-fpm
+  FROM php:7.0.7-fpm
 
-MAINTAINER DTI-SJC <tiusjc@gmail.com>
+  MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
-RUN docker-php-ext-install mysqli
+  RUN docker-php-ext-install mysqli
 
-EXPOSE 9000
+  EXPOSE 9000
 
-CMD ["php-fpm"]
+  CMD ["php-fpm"]
