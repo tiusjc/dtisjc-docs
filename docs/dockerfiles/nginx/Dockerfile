@@ -1,12 +1,13 @@
+.. code-block:: docker
+  
+  FROM nginx
 
-FROM nginx
+  MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
-MAINTAINER DTI-SJC <tiusjc@gmail.com>
+  COPY default.conf /etc/nginx/conf.d/default.conf
 
-COPY default.conf /etc/nginx/conf.d/default.conf
+  COPY index.html /var/www/html/
 
-COPY index.html /var/www/html/
+  EXPOSE 80
 
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+  CMD ["nginx", "-g", "daemon off;"]

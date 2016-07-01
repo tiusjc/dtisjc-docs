@@ -1,6 +1,7 @@
+.. code-block:: docker
 
-FROM mysql
+  FROM mysql
 
-MAINTAINER DTI-SJC <tiusjc@gmail.com>
+  MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
-EXPOSE 3306
+  EXPOSE 3306
