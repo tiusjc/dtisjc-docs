@@ -1,5 +1,5 @@
-OM phpmyadmin/phpmyadmin
+FROM phpmyadmin/phpmyadmin
 
-INTAINER DTI-SJC <tiusjc@gmail.com>
+MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
-POSE 80
+EXPOSE 80

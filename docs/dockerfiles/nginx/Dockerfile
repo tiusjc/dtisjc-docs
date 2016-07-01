@@ -1,11 +1,11 @@
-OM nginx
+FROM nginx
 
-INTAINER DTI-SJC <tiusjc@gmail.com>
+MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
-PY default.conf /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 
-PY index.html /var/www/html/
+COPY index.html /var/www/html/
 
-POSE 80
+EXPOSE 80
 
-D ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,5 +1,5 @@
-OM mysql
+FROM mysql
 
-INTAINER DTI-SJC <tiusjc@gmail.com>
+MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
-POSE 3306
+EXPOSE 3306

@@ -1,9 +1,9 @@
-OM php:7.0.7-fpm
+FROM php:7.0.7-fpm
 
-INTAINER DTI-SJC <tiusjc@gmail.com>
+MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
-N docker-php-ext-install mysqli
+RUN docker-php-ext-install mysqli
 
-POSE 9000
+EXPOSE 9000
 
-D ["php-fpm"]
+CMD ["php-fpm"]
