@@ -6,6 +6,8 @@ then
         exit
 fi
 
+#sed 's/.*.. code-block:: bash.*/```java\n&/;s/.*bash.*/&\n```/' teste.txt
+
 case "$1" in
 
 1) mv dockerfiles/nginx/Dockerfile dockerfiles/nginx/Dockerfile2

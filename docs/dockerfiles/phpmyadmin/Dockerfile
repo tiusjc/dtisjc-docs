@@ -1,9 +1,8 @@
-.. code-block:: docker
 
-  FROM phpmyadmin/phpmyadmin
+FROM phpmyadmin/phpmyadmin
 
-  MAINTAINER DTI-SJC <tiusjc@gmail.com>
+MAINTAINER DTI-SJC <tiusjc@gmail.com>
 
-  EXPOSE 80
+EXPOSE 80
 
 
