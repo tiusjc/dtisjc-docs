@@ -1,3 +1,4 @@
+
 FROM nginx
 
 MAINTAINER DTI-SJC <tiusjc@gmail.com>

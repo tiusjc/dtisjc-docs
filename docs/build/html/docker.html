@@ -206,12 +206,12 @@ $ systemctl start docker
 <ol class="arabic simple">
 <li>DOCKERFILE</li>
 </ol>
-<p>OM nginx</p>
-<p>INTAINER DTI-SJC &lt;<a class="reference external" href="mailto:tiusjc&#37;&#52;&#48;gmail&#46;com">tiusjc<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</p>
-<p>PY default.conf /etc/nginx/conf.d/default.conf</p>
-<p>PY index.html /var/www/html/</p>
-<p>POSE 80</p>
-<p>D [&#8220;nginx&#8221;, &#8220;-g&#8221;, &#8220;daemon off;&#8221;]</p>
+<p>FROM nginx</p>
+<p>MAINTAINER DTI-SJC &lt;<a class="reference external" href="mailto:tiusjc&#37;&#52;&#48;gmail&#46;com">tiusjc<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</p>
+<p>COPY default.conf /etc/nginx/conf.d/default.conf</p>
+<p>COPY index.html /var/www/html/</p>
+<p>EXPOSE 80</p>
+<p>CMD [&#8220;nginx&#8221;, &#8220;-g&#8221;, &#8220;daemon off;&#8221;]</p>
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>
@@ -299,11 +299,11 @@ Commercial support is available at
 <ol class="arabic simple">
 <li>DOCKERFILE</li>
 </ol>
-<p>OM php:7.0.7-fpm</p>
-<p>INTAINER DTI-SJC &lt;<a class="reference external" href="mailto:tiusjc&#37;&#52;&#48;gmail&#46;com">tiusjc<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</p>
-<p>N docker-php-ext-install mysqli</p>
-<p>POSE 9000</p>
-<p>D [&#8220;php-fpm&#8221;]</p>
+<p>FROM php:7.0.7-fpm</p>
+<p>MAINTAINER DTI-SJC &lt;<a class="reference external" href="mailto:tiusjc&#37;&#52;&#48;gmail&#46;com">tiusjc<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</p>
+<p>RUN docker-php-ext-install mysqli</p>
+<p>EXPOSE 9000</p>
+<p>CMD [&#8220;php-fpm&#8221;]</p>
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>
@@ -326,9 +326,9 @@ Commercial support is available at
 <div class="section" id="mysql-http-salt-8000-mysql-php">
 <h3>MYSQL ( <a class="reference external" href="http://salt:8000/mysql.php">http://salt:8000/mysql.php</a> )<a class="headerlink" href="#mysql-http-salt-8000-mysql-php" title="Link permanente para este título">¶</a></h3>
 <p>1.DOCKERFILE</p>
-<p>OM mysql</p>
-<p>INTAINER DTI-SJC &lt;<a class="reference external" href="mailto:tiusjc&#37;&#52;&#48;gmail&#46;com">tiusjc<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</p>
-<p>POSE 3306</p>
+<p>FROM mysql</p>
+<p>MAINTAINER DTI-SJC &lt;<a class="reference external" href="mailto:tiusjc&#37;&#52;&#48;gmail&#46;com">tiusjc<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</p>
+<p>EXPOSE 3306</p>
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>
@@ -371,9 +371,9 @@ mysql&gt;
 <ol class="arabic simple">
 <li>DOCKERFILE</li>
 </ol>
-<p>OM phpmyadmin/phpmyadmin</p>
-<p>INTAINER DTI-SJC &lt;<a class="reference external" href="mailto:tiusjc&#37;&#52;&#48;gmail&#46;com">tiusjc<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</p>
-<p>POSE 80</p>
+<p>FROM phpmyadmin/phpmyadmin</p>
+<p>MAINTAINER DTI-SJC &lt;<a class="reference external" href="mailto:tiusjc&#37;&#52;&#48;gmail&#46;com">tiusjc<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</p>
+<p>EXPOSE 80</p>
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>

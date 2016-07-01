@@ -1,3 +1,4 @@
+
 FROM php:7.0.7-fpm
 
 MAINTAINER DTI-SJC <tiusjc@gmail.com>
