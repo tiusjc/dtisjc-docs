@@ -18,14 +18,14 @@ Configuração
 ------------
 
 +-------------------------+-----------------------+
-| Distriuição.            | Configuração          |
+| Distribuição            | Configuração          |
 +=========================+=======================+
 | Ubuntu/Debian/Gentoo    | /etc/default/docker   |
 +-------------------------+-----------------------+
 | Opensuse/CentOS/Red Hat | /etc/sysconfig/docker |          
 +-------------------------+-----------------------+
 
-1. Mudando a localização diretório raiz do Docker (Default -> /var/lib/docker)
+1. Mudandox a localização diretório raiz do Docker (Default -> /var/lib/docker)
 
   a. Técnica 1 ( no Debian /etc/default/docker )
   
