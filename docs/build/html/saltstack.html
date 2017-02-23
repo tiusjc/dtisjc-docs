@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Índice"
+              href="genindex.html"/>
+        <link rel="search" title="Buscar" href="search.html"/>
     <link rel="top" title="DTI-SJC 1.0 documentação" href="index.html"/>
         <link rel="next" title="Sphinx vs Readthedocs" href="sphinx_vs_readthedocs.html"/>
         <link rel="prev" title="Docker - Instalação e Configuração" href="docker.html"/> 
@@ -163,7 +166,7 @@
 <h2>Instalação<a class="headerlink" href="#instalacao" title="Link permanente para este título">¶</a></h2>
 <div class="section" id="no-salt-master">
 <h3>1. No salt master<a class="headerlink" href="#no-salt-master" title="Link permanente para este título">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo sh bootstrap_salt.sh -M
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo sh bootstrap_salt.sh -M
 </pre></div>
 </div>
 <p>Docker: <a class="reference external" href="http://dtisjc-docs.readthedocs.io/en/latest/docker.html#salt-master">http://dtisjc-docs.readthedocs.io/en/latest/docker.html#salt-master</a></p>
@@ -171,7 +174,7 @@
 </div>
 <div class="section" id="no-salt-minion">
 <h3>2. No salt-minion<a class="headerlink" href="#no-salt-minion" title="Link permanente para este título">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo sh bootstrap_salt.sh -A &lt;servidor-salt&gt;
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo sh bootstrap_salt.sh -A &lt;servidor-salt&gt;
 
 onde:
    &lt;servidor-salt&gt; - IP ou DNS name <span class="k">do</span> servidor <span class="k">do</span> salt.
@@ -187,17 +190,17 @@ onde:
 <h3>1. No master<a class="headerlink" href="#no-master" title="Link permanente para este título">¶</a></h3>
 <blockquote>
 <div>/etc/salt/master</div></blockquote>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">file_roots</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">base</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/home/vol1/salt/base</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">file_roots</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">base</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">/home/vol1/salt/base</span>
 
-<span class="l l-Scalar l-Scalar-Plain">pillar_roots</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">base</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/home/vol1/salt/pillar</span>
+<span class="l-Scalar-Plain">pillar_roots</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">base</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">/home/vol1/salt/pillar</span>
 </pre></div>
 </div>
 <p>Reiniciando serviço:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ /etc/init.d/salt-minion restart
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>/etc/init.d/salt-minion restart
 </pre></div>
 </div>
 </div>
@@ -205,11 +208,11 @@ onde:
 <h3>2. No minion<a class="headerlink" href="#no-minion" title="Link permanente para este título">¶</a></h3>
 <blockquote>
 <div>/etc/salt/minion</div></blockquote>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;ip_salt_servidor&gt;</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">master</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">&lt;ip_salt_servidor&gt;</span>
 </pre></div>
 </div>
 <p>Reiniciando serviço:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ /etc/init.d/salt-minion restart
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>/etc/init.d/salt-minion restart
 </pre></div>
 </div>
 </div>
@@ -218,7 +221,7 @@ onde:
 <h2>Comandos salt<a class="headerlink" href="#comandos-salt" title="Link permanente para este título">¶</a></h2>
 <div class="section" id="aceitando-minions">
 <h3>Aceitando minions<a class="headerlink" href="#aceitando-minions" title="Link permanente para este título">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>Comando: SALT-KEY -h <span class="o">(</span> https://docs.saltstack.com/en/latest/ref/cli/salt-key.html <span class="o">)</span>
+<div class="highlight-bash"><div class="highlight"><pre>Comando: SALT-KEY -h <span class="o">(</span> https://docs.saltstack.com/en/latest/ref/cli/salt-key.html <span class="o">)</span>
          -a - aceita minion key
          -A - aceitar todas as minions keys
          -r - rejeita minion key
@@ -227,7 +230,7 @@ onde:
          -D - Deleta todas as minions keys
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ salt-key
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>salt-key
 Accepted Keys:
 D159718
 Denied Keys:
@@ -239,19 +242,19 @@ Rejected Keys:
 </div>
 <div class="section" id="verificando-a-versao">
 <h3>Verificando a versão<a class="headerlink" href="#verificando-a-versao" title="Link permanente para este título">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>Exibe a versão <span class="k">do</span> salt resumo
-$ salt-master --version
-$ salt-minion --version
+<div class="highlight-bash"><div class="highlight"><pre>Exibe a versão <span class="k">do</span> salt resumo
+<span class="nv">$ </span>salt-master --version
+<span class="nv">$ </span>salt-minion --version
 
 Exibe informações completas
-$ salt-master --versions-report
-$ salt-minion --versions-report
+<span class="nv">$ </span>salt-master --versions-report
+<span class="nv">$ </span>salt-minion --versions-report
 </pre></div>
 </div>
 </div>
 <div class="section" id="testando-os-minions">
 <h3>Testando os minions<a class="headerlink" href="#testando-os-minions" title="Link permanente para este título">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ salt <span class="se">\*</span> test.ping
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>salt <span class="se">\*</span> test.ping
 </pre></div>
 </div>
 </div>

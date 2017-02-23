@@ -30,8 +30,11 @@
   
 
   
+        <link rel="index" title="Índice"
+              href="genindex.html"/>
+        <link rel="search" title="Buscar" href="search.html"/>
     <link rel="top" title="DTI-SJC 1.0 documentação" href="index.html"/>
-        <link rel="prev" title="SaltStack - Instalação e Configuração" href="saltstack.html"/> 
+        <link rel="prev" title="SaltStack" href="saltstack.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,7 +85,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="docker.html">Docker - Instalação e Configuração</a></li>
-<li class="toctree-l1"><a class="reference internal" href="saltstack.html">SaltStack - Instalação e Configuração</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saltstack.html">SaltStack</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx vs Readthedocs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dicas">DICAS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#links-uteis">LINKS ÚTEIS</a></li>
@@ -141,7 +144,7 @@
 <p>Generating an SSH key - <a class="reference external" href="https://help.github.com/articles/generating-an-ssh-key">https://help.github.com/articles/generating-an-ssh-key</a></p>
 </li>
 <li><p class="first">Crie uma pasta <strong>documentation</strong> para o seu projeto:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir documentation
+<div class="highlight-default"><div class="highlight"><pre>$ mkdir documentation
 $ cd documentation
 $ git init
 $ git remote add origin git@github.com:tiusjc/dtisjc-docs.git
@@ -149,15 +152,15 @@ $ git remote add origin git@github.com:tiusjc/dtisjc-docs.git
 </div>
 </li>
 <li><p class="first">Crie uma pasta docs:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir docs
+<div class="highlight-default"><div class="highlight"><pre>$ mkdir docs
 </pre></div>
 </div>
 </li>
 <li><p class="first">Instale o <strong>sphinx</strong> e configure o <strong>sphinx-quickstart</strong>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install phinx
-$ sphinx-quickstart
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pip install phinx
+<span class="nv">$ </span>sphinx-quickstart
 &gt; root path <span class="k">for</span> documentation <span class="o">[</span>.<span class="o">]</span>: docs
-&gt; Separate <span class="nb">source</span> and build directories <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>: y
+&gt; Separate <span class="nb">source </span>and build directories <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>: y
 &gt; Name prefix <span class="k">for</span> templates and static dir <span class="o">[</span>_<span class="o">]</span>:
 &gt; Project name: dtisjc-docs
 &gt; Author name<span class="o">(</span>s<span class="o">)</span>: DTI-SJC
@@ -168,25 +171,25 @@ $ sphinx-quickstart
 &gt; Name of your master document <span class="o">(</span>without suffix<span class="o">)</span> <span class="o">[</span>index<span class="o">]</span>:
 &gt; Do you want to use the epub builder <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>:
 &gt; autodoc: automatically insert docstrings from modules <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>: y
-&gt; doctest: automatically <span class="nb">test</span> code snippets in doctest blocks <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>: y
+&gt; doctest: automatically <span class="nb">test </span>code snippets in doctest blocks <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>: y
 &gt; intersphinx: link between Sphinx documentation of different projects <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>:
 &gt; todo: write <span class="s2">&quot;todo&quot;</span> entries that can be shown or hidden on build <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>:
 &gt; coverage: checks <span class="k">for</span> documentation coverage <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>:
 &gt; imgmath: include math, rendered as PNG or SVG images <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>:
 &gt; mathjax: include math, rendered in the browser by MathJax <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>: y
 &gt; ifconfig: conditional inclusion of content based on config values <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>n<span class="o">]</span>:
-&gt; viewcode: include links to the <span class="nb">source</span> code of documented Python objects <span class="o">(</span>y/n<span class="o">)[</span>n<span class="o">]</span>: y
+&gt; viewcode: include links to the <span class="nb">source </span>code of documented Python objects <span class="o">(</span>y/n<span class="o">)[</span>n<span class="o">]</span>: y
 &gt; Create Makefile? <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>y<span class="o">]</span>:
-&gt; Create Windows <span class="nb">command</span> file? <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>y<span class="o">]</span>:
+&gt; Create Windows <span class="nb">command </span>file? <span class="o">(</span>y/n<span class="o">)</span> <span class="o">[</span>y<span class="o">]</span>:
 </pre></div>
 </div>
 </li>
 <li><p class="first">A pasta docs agora possui:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ls docs -l
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ls docs -l
 -rw-r--r-- <span class="m">1</span> root root <span class="m">8085</span> May <span class="m">12</span> 14:40 Makefile
 drwxr-xr-x <span class="m">4</span> root root <span class="m">4096</span> May <span class="m">12</span> 14:51 build
 -rw-r--r-- <span class="m">1</span> root root <span class="m">7747</span> May <span class="m">12</span> 14:40 make.bat
-drwxr-xr-x <span class="m">4</span> root root <span class="m">4096</span> May <span class="m">12</span> 14:47 <span class="nb">source</span> <span class="c1">#arquivo principal index.rst</span>
+drwxr-xr-x <span class="m">4</span> root root <span class="m">4096</span> May <span class="m">12</span> 14:47 <span class="nb">source</span> <span class="c">#arquivo principal index.rst</span>
 </pre></div>
 </div>
 </li>
@@ -195,13 +198,13 @@ drwxr-xr-x <span class="m">4</span> root root <span class="m">4096</span> May <s
 <p class="first admonition-title">Nota</p>
 <p class="last">A pasta source conterá os arquivos após a renderização(.rst). Arquivos rst são os arquivos fontes para sua documentação.</p>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">############</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="c">############</span>
 <span class="n">All</span> <span class="n">about</span> <span class="n">me</span>
-<span class="c1">############</span>
+<span class="c">############</span>
 
-<span class="n">I</span><span class="s1">&#39;m Daniele Procida, a Django user and developer.</span>
+<span class="n">I</span><span class="s">&#39;m Daniele Procida, a Django user and developer.</span>
 
-<span class="n">I</span><span class="s1">&#39;ve contributed to:</span>
+<span class="n">I</span><span class="s">&#39;ve contributed to:</span>
 
 <span class="o">*</span>   <span class="n">django</span> <span class="n">CMS</span>
 <span class="o">*</span>   <span class="n">Arkestra</span>
@@ -210,7 +213,7 @@ drwxr-xr-x <span class="m">4</span> root root <span class="m">4096</span> May <s
 </div>
 </li>
 <li><p class="first">Adicione a referência a ele no arquivo index.rst como abaixo:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
    <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">2</span>
 
    <span class="nb">all</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">me</span>
@@ -218,13 +221,13 @@ drwxr-xr-x <span class="m">4</span> root root <span class="m">4096</span> May <s
 </div>
 </li>
 <li><p class="first">Para renderizar o seu documento na pasta docs execute ( source(<em>.rst) -&gt; build/html(</em>.html) ):</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ make html
-sphinx-build -b html -d build/doctrees   <span class="nb">source</span> build/html
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>make html
+sphinx-build -b html -d build/doctrees   <span class="nb">source </span>build/html
 Running Sphinx v1.4.1
 loading translations <span class="o">[</span>pt_BR<span class="o">]</span>... <span class="k">done</span>
 loading pickled environment... <span class="k">done</span>
 building <span class="o">[</span>mo<span class="o">]</span>: targets <span class="k">for</span> <span class="m">0</span> po files that are out of date
-building <span class="o">[</span>html<span class="o">]</span>: targets <span class="k">for</span> <span class="m">0</span> <span class="nb">source</span> files that are out of date
+building <span class="o">[</span>html<span class="o">]</span>: targets <span class="k">for</span> <span class="m">0</span> <span class="nb">source </span>files that are out of date
 updating environment: <span class="m">0</span> added, <span class="m">0</span> changed, <span class="m">0</span> removed
 looking <span class="k">for</span> now-outdated files... none found
 no targets are out of date.
@@ -235,13 +238,13 @@ Build finished. The HTML pages are in build/html.
 </div>
 </li>
 <li><p class="first">Veja na pasta build/html que foram criados os seguintes arquivos:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ls build/html/
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ls build/html/
 _sources  _static  all-about-me.html  genindex.html  index.html  objects.inv  search.html  searchindex.js  sobre.html
 </pre></div>
 </div>
 </li>
 <li><p class="first">Vamos testar:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python -m SimpleHTTPServer
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python -m SimpleHTTPServer
 Serving HTTP on 0.0.0.0 port <span class="m">8000</span> ...
 </pre></div>
 </div>
@@ -249,23 +252,23 @@ Serving HTTP on 0.0.0.0 port <span class="m">8000</span> ...
 <li><p class="first">No seu navegador digite <a class="reference external" href="http://servidor:8000/build/html/">http://servidor:8000/build/html/</a></p>
 </li>
 <li><p class="first">Instalar o tema para sphinx_rtd_theme no ReadTheDocs - <a class="reference external" href="https://github.com/snide/sphinx_rtd_theme">https://github.com/snide/sphinx_rtd_theme</a></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install sphinx_rtd_theme
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pip install sphinx_rtd_theme
 </pre></div>
 </div>
 </li>
 <li><p class="first">No seu conf.py arquivo</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sphinx_rtd_theme</span>
+<div class="highlight-default"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sphinx_rtd_theme</span>
 
-<span class="n">html_theme</span> <span class="o">=</span> <span class="s2">&quot;sphinx_rtd_theme&quot;</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s">&quot;sphinx_rtd_theme&quot;</span>
 
 <span class="n">html_theme_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">sphinx_rtd_theme</span><span class="o">.</span><span class="n">get_html_theme_path</span><span class="p">()]</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Atualize o github:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git add .
-$ git commit -m <span class="s2">&quot;Atualizando o tema para sphinx_rtd_theme&quot;</span>
-$ git push origin master
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git add .
+<span class="nv">$ </span>git commit -m <span class="s2">&quot;Atualizando o tema para sphinx_rtd_theme&quot;</span>
+<span class="nv">$ </span>git push origin master
 </pre></div>
 </div>
 </li>
@@ -276,7 +279,7 @@ $ git push origin master
 <div><ul class="simple">
 <li>Lista todas as linguagens suportadas (.. code-block:: &lt;language&gt;)</li>
 </ul>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pygmentize -L lexers
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>pygmentize -L lexers
 </pre></div>
 </div>
 </div></blockquote>
@@ -296,7 +299,7 @@ $ git push origin master
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="saltstack.html" class="btn btn-neutral" title="SaltStack - Instalação e Configuração" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="saltstack.html" class="btn btn-neutral" title="SaltStack" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

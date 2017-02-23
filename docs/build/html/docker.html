@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Índice"
+              href="genindex.html"/>
+        <link rel="search" title="Buscar" href="search.html"/>
     <link rel="top" title="DTI-SJC 1.0 documentação" href="index.html"/>
         <link rel="next" title="SaltStack" href="saltstack.html"/>
         <link rel="prev" title="Documentação DTI-SJC" href="index.html"/> 
@@ -147,9 +150,9 @@
 <h1>Docker - Instalação e Configuração<a class="headerlink" href="#docker-instalacao-e-configuracao" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="instalacao">
 <h2>Instalação<a class="headerlink" href="#instalacao" title="Link permanente para este título">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -sSL https://get.docker.com/ <span class="p">|</span> sh
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -sSL https://get.docker.com/ <span class="p">|</span> sh
 
-$ docker -v
+<span class="nv">$ </span>docker -v
 Docker version 1.11.1, build 5604cbe
 </pre></div>
 </div>
@@ -183,17 +186,17 @@ Docker version 1.11.1, build 5604cbe
 <div><ol class="loweralpha simple">
 <li>Técnica 1 ( no Debian /etc/default/docker )</li>
 </ol>
-<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="nv">DOCKER_OPTS</span><span class="o">=</span><span class="s2">&quot;-g /mnt/bigdisk/docker&quot;</span>
+<div class="highlight-docker"><div class="highlight"><pre><span class="nv">DOCKER_OPTS</span><span class="o">=</span><span class="s2">&quot;-g /mnt/bigdisk/docker&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ systemctl stop docker
-$ systemctl start docker
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>systemctl stop docker
+<span class="nv">$ </span>systemctl start docker
 </pre></div>
 </div>
 <ol class="loweralpha simple" start="2">
 <li>Técnica 2</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker daemon -g /mnt/bigdisk/docker
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker daemon -g /mnt/bigdisk/docker
 </pre></div>
 </div>
 </div></blockquote>
@@ -206,7 +209,7 @@ $ systemctl start docker
 <ol class="arabic simple">
 <li>DOCKERFILE</li>
 </ol>
-<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> nginx</span>
+<div class="highlight-docker"><div class="highlight"><pre><span class="k">FROM</span><span class="s"> nginx</span>
 
 <span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
 
@@ -222,31 +225,31 @@ COPY index.html /var/www/html/
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/nginx .
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker build -t tiusjc/nginx .
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>DOCKER RUN ( LINK COM MYSQL)</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -h nginx --link php:php -p 8000:80 --name nginx -v /data/nginx/html:/usr/share/nginx/html -d tiusjc/nginx
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker run -h nginx --link php:php -p 8000:80 --name nginx -v /data/nginx/html:/usr/share/nginx/html -d tiusjc/nginx
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
 <p class="last">VOlUMES:  HOST=/data/nginx/html CONTAINER=/usr/share/nginx/html</p>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ls /data/nginx/html/
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ls /data/nginx/html/
 index.html
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
 <li>DOCKER EXEC</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti nginx /bin/bash
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker <span class="nb">exec</span> -ti nginx /bin/bash
 </pre></div>
 </div>
 <p>Testando:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>root@nginx:/# curl http://127.0.0.1/
+<div class="highlight-bash"><div class="highlight"><pre>root@nginx:/# curl http://127.0.0.1/
 </pre></div>
 </div>
 <div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -273,31 +276,31 @@ index.html
 22
 23
 24
-25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Welcome to nginx!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+25</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;title&gt;</span>Welcome to nginx!<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;style&gt;</span>
   <span class="nt">body</span> <span class="p">{</span>
-      <span class="nb">width</span><span class="o">:</span> <span class="m">35em</span><span class="p">;</span>
-      <span class="nb">margin</span><span class="o">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
-      <span class="nb">font-family</span><span class="o">:</span> <span class="n">Tahoma</span><span class="o">,</span> <span class="n">Verdana</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+      <span class="k">width</span><span class="o">:</span> <span class="m">35em</span><span class="p">;</span>
+      <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
+      <span class="k">font-family</span><span class="o">:</span> <span class="n">Tahoma</span><span class="o">,</span> <span class="n">Verdana</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
   <span class="p">}</span>
-<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to nginx!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Welcome to nginx!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.<span class="nt">&lt;/p&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>For online documentation and support please refer to
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://nginx.org/&quot;</span><span class="p">&gt;</span>nginx.org<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<span class="nt">&lt;p&gt;</span>For online documentation and support please refer to
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://nginx.org/&quot;</span><span class="nt">&gt;</span>nginx.org<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;br/&gt;</span>
 Commercial support is available at
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://nginx.com/&quot;</span><span class="p">&gt;</span>nginx.com<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://nginx.com/&quot;</span><span class="nt">&gt;</span>nginx.com<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>Thank you for using nginx.<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="nt">&lt;p&gt;&lt;em&gt;</span>Thank you for using nginx.<span class="nt">&lt;/em&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -306,7 +309,7 @@ Commercial support is available at
 <ol class="arabic simple">
 <li>DOCKERFILE</li>
 </ol>
-<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> php:7.0.7-fpm</span>
+<div class="highlight-docker"><div class="highlight"><pre><span class="k">FROM</span><span class="s"> php:7.0.7-fpm</span>
 
 <span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
 
@@ -320,26 +323,26 @@ Commercial support is available at
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/php .
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker build -t tiusjc/php .
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>DOCKER RUN (link com MYSQL)</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -h php --name php --link mysql:mysql --volumes_from:nginx -d tiusjc/php
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker run -h php --name php --link mysql:mysql --volumes_from:nginx -d tiusjc/php
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
 <li>DOCKER EXEC</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti php /bin/bash
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker <span class="nb">exec</span> -ti php /bin/bash
 </pre></div>
 </div>
 </div>
 <div class="section" id="mysql-http-salt-8000-mysql-php">
 <h3>MYSQL ( <a class="reference external" href="http://salt:8000/mysql.php">http://salt:8000/mysql.php</a> )<a class="headerlink" href="#mysql-http-salt-8000-mysql-php" title="Link permanente para este título">¶</a></h3>
 <p>1.DOCKERFILE</p>
-<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> mysql</span>
+<div class="highlight-docker"><div class="highlight"><pre><span class="k">FROM</span><span class="s"> mysql</span>
 
 <span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
 
@@ -349,23 +352,23 @@ Commercial support is available at
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/mysql .
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker build -t tiusjc/mysql .
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>DOCKER RUN</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run --name mysql -h mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>******* -d tiusjc/mysql
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker run --name mysql -h mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>******* -d tiusjc/mysql
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
 <li>DOCKER EXEC</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti mysql /bin/bash
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker <span class="nb">exec</span> -ti mysql /bin/bash
 </pre></div>
 </div>
 <p>Testando:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>root@mysql:/# mysql -uroot -p
+<div class="highlight-bash"><div class="highlight"><pre>root@mysql:/# mysql -uroot -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with <span class="p">;</span> or <span class="se">\g</span>.
 Your MySQL connection id is 3
@@ -388,7 +391,7 @@ mysql&gt;
 <ol class="arabic simple">
 <li>DOCKERFILE</li>
 </ol>
-<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> phpmyadmin/phpmyadmin</span>
+<div class="highlight-docker"><div class="highlight"><pre><span class="k">FROM</span><span class="s"> phpmyadmin/phpmyadmin</span>
 
 <span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
 
@@ -398,19 +401,19 @@ mysql&gt;
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/phpmyadmin .
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker build -t tiusjc/phpmyadmin .
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>DOCKER RUN</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run --name phpmyadmin -h phpmyadmin -e <span class="nv">PMA_USER</span><span class="o">=</span>root -e <span class="nv">PMA_PASSWORD</span><span class="o">=</span>******* -e <span class="nv">PMA_HOST</span><span class="o">=</span>mysql -d tiusjc/phpmyadmin
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker run --name phpmyadmin -h phpmyadmin -e <span class="nv">PMA_USER</span><span class="o">=</span>root -e <span class="nv">PMA_PASSWORD</span><span class="o">=</span>******* -e <span class="nv">PMA_HOST</span><span class="o">=</span>mysql -d tiusjc/phpmyadmin
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
 <li>DOCKER EXEC</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti phpmyadmin /bin/bash
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker <span class="nb">exec</span> -ti phpmyadmin /bin/bash
 </pre></div>
 </div>
 </div>
@@ -419,7 +422,7 @@ mysql&gt;
 <ol class="arabic simple">
 <li>DOCKER COMPOSE</li>
 </ol>
-<div class="highlight-docker"><div class="highlight"><pre><span></span>nginx:
+<div class="highlight-docker"><div class="highlight"><pre>nginx:
   image: tiusjc/nginx
   ports:
     - 8000:80
@@ -429,7 +432,7 @@ mysql&gt;
     - app
 </pre></div>
 </div>
-<div class="highlight-docker"><div class="highlight"><pre><span></span>php:
+<div class="highlight-docker"><div class="highlight"><pre>php:
   image: tiusjc/php7.0.7-fpm
   ports:
     - 9000:9000
@@ -439,14 +442,14 @@ mysql&gt;
     - app
 </pre></div>
 </div>
-<div class="highlight-docker"><div class="highlight"><pre><span></span>app:
+<div class="highlight-docker"><div class="highlight"><pre>app:
   image: tiusjc/php7.0.7-fpm
   volumes:
     - /data/html/:/var/www/html
-  command: <span class="nb">echo</span> <span class="s2">&quot;Backup aplicação&quot;</span>
+  <span class="nb">command</span>: <span class="nb">echo</span> <span class="s2">&quot;Backup aplicação&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-docker"><div class="highlight"><pre><span></span>mysql:
+<div class="highlight-docker"><div class="highlight"><pre>mysql:
   image: tiusjc/mysql
   volumes_from:
     - data
@@ -454,7 +457,7 @@ mysql&gt;
     MYSQL_ROOT_PASSWORD: ****
 </pre></div>
 </div>
-<div class="highlight-docker"><div class="highlight"><pre><span></span>phpmyadmin:
+<div class="highlight-docker"><div class="highlight"><pre>phpmyadmin:
   image: phpmyadmin/phpmyadmin
   ports:
     - 8080:80
@@ -466,17 +469,17 @@ mysql&gt;
     PMA_HOST: mysql
 </pre></div>
 </div>
-<div class="highlight-docker"><div class="highlight"><pre><span></span>data:
+<div class="highlight-docker"><div class="highlight"><pre>data:
   image: tiusjc/mysql
   volumes:
     - /data/mysql/:/var/lib/mysql
-  command: <span class="nb">echo</span> <span class="s2">&quot;Backup Mysql&quot;</span>
+  <span class="nb">command</span>: <span class="nb">echo</span> <span class="s2">&quot;Backup Mysql&quot;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li>EXECUTANDO</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker-compose -f nginx-php-mysql.yml -d
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker-compose -f nginx-php-mysql.yml -d
 </pre></div>
 </div>
 </div>
@@ -485,7 +488,7 @@ mysql&gt;
 <ol class="arabic simple">
 <li>DOCKERFILE</li>
 </ol>
-<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> ubuntu:xenial</span>
+<div class="highlight-docker"><div class="highlight"><pre><span class="k">FROM</span><span class="s"> ubuntu:xenial</span>
 
 <span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
 
@@ -493,11 +496,11 @@ mysql&gt;
 
 <span class="k">RUN</span> wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub <span class="p">|</span> apt-key add -
 
-<span class="k">RUN</span> <span class="nb">echo</span> deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main &gt; /etc/apt/sources.list.d/saltstack.list
+<span class="k">RUN</span> <span class="nb">echo </span>deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main &gt; /etc/apt/sources.list.d/saltstack.list
 
 <span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -q -y salt-master
 
-<span class="k">RUN</span> <span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>xterm
+<span class="k">RUN</span> <span class="nb">export </span><span class="nv">TERM</span><span class="o">=</span>xterm
 
 <span class="k">ENTRYPOINT</span><span class="s"> [&quot;/usr/bin/salt-master&quot;]</span>
 
@@ -507,19 +510,19 @@ mysql&gt;
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/salt-master:16.04 .
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker build -t tiusjc/salt-master:16.04 .
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>DOCKER RUN</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -d -h salt --name salt-master tiusjc/salt-master:16.04
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker run -d -h salt --name salt-master tiusjc/salt-master:16.04
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
 <li>DOCKER EXEC</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker <span class="nb">exec</span> -ti salt-master /bin/bash
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker <span class="nb">exec</span> -ti salt-master /bin/bash
 </pre></div>
 </div>
 </div>
@@ -528,7 +531,7 @@ mysql&gt;
 <ol class="arabic simple">
 <li>DOCKERFILE</li>
 </ol>
-<div class="highlight-docker"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> ubuntu:xenial</span>
+<div class="highlight-docker"><div class="highlight"><pre><span class="k">FROM</span><span class="s"> ubuntu:xenial</span>
 
 <span class="k">MAINTAINER</span><span class="s"> DTI-SJC &lt;tiusjc@gmail.com&gt;</span>
 
@@ -536,11 +539,11 @@ mysql&gt;
 
 <span class="k">RUN</span> wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub <span class="p">|</span> apt-key add -
 
-<span class="k">RUN</span> <span class="nb">echo</span> deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main &gt; /etc/apt/sources.list.d/saltstack.list
+<span class="k">RUN</span> <span class="nb">echo </span>deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main &gt; /etc/apt/sources.list.d/saltstack.list
 
 <span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -q -y salt-minion
 
-<span class="k">RUN</span> <span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>xterm
+<span class="k">RUN</span> <span class="nb">export </span><span class="nv">TERM</span><span class="o">=</span>xterm
 
 <span class="k">CMD</span><span class="s"> [&quot;/usr/bin/salt-minion&quot;]</span>
 </pre></div>
@@ -548,13 +551,13 @@ mysql&gt;
 <ol class="arabic simple" start="2">
 <li>DOCKER BUILD</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker build -t tiusjc/salt-minion:16.04 .
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker build -t tiusjc/salt-minion:16.04 .
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>DOCKER RUN:</li>
 </ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker run -d --link salt-master:salt-master -h salt-minion --name salt-minion tiusjc/salt-minion:16.04
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>docker run -d --link salt-master:salt-master -h salt-minion --name salt-minion tiusjc/salt-minion:16.04
 </pre></div>
 </div>
 </div>
